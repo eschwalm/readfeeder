@@ -1,0 +1,17 @@
+.navbar-header {
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}

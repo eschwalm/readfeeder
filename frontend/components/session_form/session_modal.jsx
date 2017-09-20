@@ -12,13 +12,13 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    margin                : '0 auto'
+    textAlign         : 'center'
   }
 };
 
 class SessionModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
@@ -59,16 +59,16 @@ class SessionModal extends React.Component {
     let title = (this.props.formType === "login") ? "Login" : "Sign Up";
 
     return (
-      <div className="session-modal">
+      <div>
         <button onClick={this.openModal}
-          className="btn btn-success navbar-btn">
-          login</button>
+          className="btn btn-success navbar-btn navbar-right">
+          {title}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Session Modal"
         >
 
           <h2 ref={subtitle => this.subtitle = subtitle}>{title}</h2>
@@ -78,6 +78,7 @@ class SessionModal extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"/>
+
               <br/>
 
               <input
@@ -86,7 +87,7 @@ class SessionModal extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"/>
               <br/>
-            <input type="submit" />
+            <input className="btn btn-success btn-sm" type="submit" />
         </Modal>
       </div>
     );

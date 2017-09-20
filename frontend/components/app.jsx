@@ -9,11 +9,11 @@ import {
 } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
-import Header from './home/home_header.jsx';
+import HomePage from './home/home_page.jsx';
 
 const App = () => (
   <div>
-    <Header />
+    <HomePage />
   </div>
 );
 

@@ -1,25 +1,28 @@
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
 import { login, logout, signup } from '../../actions/session_actions';
 import SessionModal from './session_modal';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const formType = (ownProps.formType === "login") ? "login" : "signup";
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
+    errors: state.errors.session,
+    formType
   };
 };
 
-const mapDispatchToProps = (dispatch, { location }) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const formType = ownProps.formType;
+  const submitForm = (formType === "login") ? login : signup;
+  // console.log(formType);
   return {
-    login: user => dispatch(login(user)),
-    logout: user => dispatch(logout(user)),
-    signup: user => dispatch(signup(user))
+    submitForm: user => dispatch(submitForm(user))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionModal);
+)(SessionModal));
