@@ -60,7 +60,9 @@ class SessionModal extends React.Component {
 
     return (
       <div className="session-modal">
-        <button onClick={this.openModal}>login</button>
+        <button onClick={this.openModal}
+          className="btn btn-success navbar-btn">
+          login</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

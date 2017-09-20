@@ -9,13 +9,11 @@ import {
 } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
+import Header from './home/home_header.jsx';
 
 const App = () => (
   <div>
-    <header>
-      <h1>Welcome to Readfeeder!</h1>
-    </header>
-    <SessionFormContainer />
+    <Header />
   </div>
 );
 
