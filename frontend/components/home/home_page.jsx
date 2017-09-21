@@ -12,6 +12,9 @@ class HomePage extends React.Component {
         </header>
         <body className="home-body">
           <Welcome />
+          <br/> <br/>
+          <img
+            src="https://s3.feedly.com/production/head/images/landing/screenshot-web@2x.png"/>
         </body>
       </div>
     );

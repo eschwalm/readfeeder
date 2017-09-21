@@ -7,7 +7,7 @@ class NavHeader extends React.Component {
       <div className="navbar-header">
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container-fluid">
-              <h6>Welcome To Readfeeder</h6>
+              <i className="fa fa-rss-square fa-2x" aria-hidden="true"></i>
               <SessionFormContainer formType="login"/>
           </div>
       </nav>

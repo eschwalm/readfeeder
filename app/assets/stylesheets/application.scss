@@ -15,9 +15,13 @@
 
 
 @import 'base/reset.scss';
-
 @import "bootstrap";
 
 
+@import "font-awesome";
 @import 'components/home/header';
 @import 'components/home/homepage';
+
+* {
+  box-sizing: border-box;
+}

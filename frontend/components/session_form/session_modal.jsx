@@ -87,7 +87,7 @@ class SessionModal extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"/>
               <br/>
-            <input className="btn btn-success btn-sm" type="submit" />
+            <input className="btn btn-success btn-xs" type="submit" />
         </Modal>
       </div>
     );

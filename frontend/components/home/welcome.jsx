@@ -5,9 +5,9 @@ class Welcome extends React.Component {
   render() {
     return (
       <div className="home-welcome">
-        <h4>Welcome to Readfeeder</h4>
+        <h1>Welcome to Readfeeder</h1><br/>
         <p>The content you need to accelerate your
-          research, marketing, and sales</p>
+          research, marketing, and sales</p><br/>
         <SessionFormContainer formType="signup" />
       </div>
     );
