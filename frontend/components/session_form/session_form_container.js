@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.formType;
   const submitForm = (formType === "login") ? login : signup;
-  // console.log(formType);
   return {
     submitForm: user => dispatch(submitForm(user))
   };

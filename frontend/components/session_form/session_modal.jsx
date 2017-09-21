@@ -17,6 +17,7 @@ const customStyles = {
     margin                     : '0 auto',
     textAlign                  : 'center',
     width                      : '25%',
+    height                     : '250px',
     position                   : 'absolute',
     top                        : '40px',
     left                       : '40px',
@@ -29,7 +30,7 @@ const customStyles = {
     borderRadius               : '4px',
     outline                    : 'none',
     padding                    : '25px',
-    justifyContent            : 'space-around'
+    // justifyContent            : 'space-around'
 
   }
 };
