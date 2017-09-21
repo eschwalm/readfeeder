@@ -3,14 +3,27 @@
   box-sizing: border-box;
   padding-left: 15%;
   padding-right: 15%;
+  vertical-align: middle;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  vertical-align: middle;
 }
 
 .container-fluid {
   display: flex;
   justify-content: space-between;
+  vertical-align: middle;
+}
+
+.user-header {
+  vertical-align: middle;
+  justify-content: space-between;
+}
+
+.user-icon {
+  padding-right: 30px;
+  padding-left: 10px;
 }

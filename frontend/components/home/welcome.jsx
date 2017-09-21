@@ -9,6 +9,7 @@ class Welcome extends React.Component {
         <p>The content you need to accelerate your
           research, marketing, and sales</p><br/>
         <SessionFormContainer formType="signup" />
+
       </div>
     );
   }

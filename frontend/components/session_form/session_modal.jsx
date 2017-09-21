@@ -16,8 +16,8 @@ const customStyles = {
   content : {
     margin                     : '0 auto',
     textAlign                  : 'center',
-    width                      : '25%',
-    height                     : '250px',
+    maxBlockSize               : 'max-content',
+    maxInlineSize              : 'max-content',
     position                   : 'absolute',
     top                        : '40px',
     left                       : '40px',
@@ -29,8 +29,7 @@ const customStyles = {
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '4px',
     outline                    : 'none',
-    padding                    : '25px',
-    // justifyContent            : 'space-around'
+    padding                    : '25px'
 
   }
 };
@@ -40,6 +39,7 @@ class SessionModal extends React.Component {
     super(props);
 
     this.state = {
+      errors: [],
       modalIsOpen: false,
       username: "",
       password: ""
@@ -48,7 +48,6 @@ class SessionModal extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.displayErrors = this.displayErrors.bind(this);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -64,10 +63,14 @@ class SessionModal extends React.Component {
     this.props.submitForm(this.state);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({errors: [nextProps.errors]});
+  }
+
   displayErrors() {
-    return () => (
+    return (
       <ul>
-        {this.props.errors.map( (error, i) => (
+        {this.state.errors.map( (error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
@@ -75,12 +78,16 @@ class SessionModal extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({
+      modalIsOpen: true,
+      errors: [],
+      username: "",
+      password: ""
+    });
   }
 
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
+    this.subtitle.style.color = '#f00';
   }
 
   closeModal() {
@@ -105,25 +112,33 @@ class SessionModal extends React.Component {
 
           <h2>{title}</h2>
 
+          <div
+            ref={subtitle => this.subtitle = subtitle}>
+            {this.displayErrors()}
+          </div>
+
+            Username
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+              className="session-input"/>
+
+
+            <br/>
+            Password
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+              className="session-input"/>
+            <br/>
+
 
           <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            placeholder="Username"
-            className="session-input"/>
-
-          <br/>
-
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder="Password"
-            className="session-input"/>
-          <br/>
-          <input
-            className="btn btn-success btn-xs"
+            className="btn-sm btn-success"
             type="submit"
             onClick={this.handleSubmit}/>
 

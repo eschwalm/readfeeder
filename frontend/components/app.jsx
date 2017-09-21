@@ -7,14 +7,19 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import AuthRoute from '../../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SessionFormContainer from './session_form/session_form_container';
 import HomePage from './home/home_page.jsx';
+import MainPage from './main/main_page.jsx';
 
-const App = () => (
+const App = (store) => (
   <div>
-    <HomePage />
+
+    <Switch>
+      <ProtectedRoute path="/i" component={MainPage} />
+      <AuthRoute exact path="/" component={HomePage} />
+    </Switch>
   </div>
 );
 
