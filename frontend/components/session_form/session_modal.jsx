@@ -5,14 +5,32 @@ import { Route, withRouter } from 'react-router-dom';
 import Modal from 'react-modal';
 
 const customStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+  },
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    textAlign         : 'center'
+    margin                     : '0 auto',
+    textAlign                  : 'center',
+    width                      : '25%',
+    position                   : 'absolute',
+    top                        : '40px',
+    left                       : '40px',
+    right                      : '40px',
+    bottom                     : '40px',
+    border                     : '1px solid #333333',
+    background                 : '#fff',
+    overflow                   : 'auto',
+    WebkitOverflowScrolling    : 'touch',
+    borderRadius               : '4px',
+    outline                    : 'none',
+    padding                    : '20px',
+    justifyContent            : 'space-around'
+
   }
 };
 
@@ -77,7 +95,8 @@ class SessionModal extends React.Component {
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                placeholder="Username"/>
+                placeholder="Username"
+                className="session-input"/>
 
               <br/>
 
@@ -85,9 +104,11 @@ class SessionModal extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                placeholder="Password"/>
+                placeholder="Password"
+                className="session-input"/>
               <br/>
             <input className="btn btn-success btn-xs" type="submit" />
+
         </Modal>
       </div>
     );
