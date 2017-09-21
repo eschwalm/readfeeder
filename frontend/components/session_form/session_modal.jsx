@@ -28,7 +28,7 @@ const customStyles = {
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '4px',
     outline                    : 'none',
-    padding                    : '20px',
+    padding                    : '25px',
     justifyContent            : 'space-around'
 
   }
@@ -47,6 +47,7 @@ class SessionModal extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.displayErrors = this.displayErrors.bind(this);
   }
 
   update(field) {
@@ -58,6 +59,16 @@ class SessionModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
+  }
+
+  displayErrors() {
+    return () => (
+      <ul>
+        {this.props.errors.map( (error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
   }
 
   openModal() {
@@ -91,6 +102,7 @@ class SessionModal extends React.Component {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>{title}</h2>
 
+              {this.displayErrors()}
               <input
                 type="text"
                 value={this.state.username}
