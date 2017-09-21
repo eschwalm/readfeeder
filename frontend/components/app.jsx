@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import AuthRoute from '../../util/route_util';
 
 import SessionFormContainer from './session_form/session_form_container';
 import HomePage from './home/home_page.jsx';

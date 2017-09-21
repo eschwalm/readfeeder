@@ -49,6 +49,8 @@ class SessionModal extends React.Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.displayErrors = this.displayErrors.bind(this);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -101,26 +103,29 @@ class SessionModal extends React.Component {
           contentLabel="Session Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>{title}</h2>
+          <h2>{title}</h2>
 
-              {this.displayErrors()}
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="Username"
-                className="session-input"/>
 
-              <br/>
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            placeholder="Username"
+            className="session-input"/>
 
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-                className="session-input"/>
-              <br/>
-            <input className="btn btn-success btn-xs" type="submit" />
+          <br/>
+
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            placeholder="Password"
+            className="session-input"/>
+          <br/>
+          <input
+            className="btn btn-success btn-xs"
+            type="submit"
+            onClick={this.handleSubmit}/>
 
         </Modal>
       </div>
