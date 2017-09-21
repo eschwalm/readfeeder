@@ -8,8 +8,13 @@ class Welcome extends React.Component {
         <h1>Welcome to Readfeeder</h1><br/>
         <p>The content you need to accelerate your
           research, marketing, and sales</p><br/>
-        <SessionFormContainer formType="signup" />
 
+        <div className="welcome-button">
+          <SessionFormContainer formType="signup" />
+        </div>
+        <div className="welcome-button">
+          <SessionFormContainer formType="login" demo="true" />
+        </div>
       </div>
     );
   }

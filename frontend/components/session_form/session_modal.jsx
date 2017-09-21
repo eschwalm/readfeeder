@@ -50,6 +50,9 @@ class SessionModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.title = this.title.bind(this);
+    this.buttonType = this.buttonType.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field) {
@@ -86,6 +89,14 @@ class SessionModal extends React.Component {
     });
   }
 
+  handleDemo() {
+    this.props.submitForm({
+      username: "Readfeeder_demo",
+      password: "demo_password123",
+      errors: []
+    });
+  }
+
   afterOpenModal() {
     this.subtitle.style.color = '#f00';
   }
@@ -94,14 +105,28 @@ class SessionModal extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
+  title() {
+    if (this.props.demo === "true") {
+      return "Demo";
+    }
+    return (this.props.formType === "login") ? "Login" : "Sign Up";
+  }
+
+  buttonType() {
+    if (this.props.demo === "true") {
+      return "btn btn-primary navbar-btn navbar-right";
+    }
+    return "btn btn-success navbar-btn navbar-right";
+  }
+
   render() {
-    let title = (this.props.formType === "login") ? "Login" : "Sign Up";
 
     return (
       <div>
-        <button onClick={this.openModal}
-          className="btn btn-success navbar-btn navbar-right">
-          {title}</button>
+        <button onClick={
+            (this.props.demo === "true") ? this.handleDemo : this.openModal}
+          className={this.buttonType()}>
+          {this.title()}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -110,7 +135,7 @@ class SessionModal extends React.Component {
           contentLabel="Session Modal"
         >
 
-          <h2>{title}</h2>
+          <h2>{this.title()}</h2>
 
           <div
             ref={subtitle => this.subtitle = subtitle}>
@@ -138,7 +163,7 @@ class SessionModal extends React.Component {
 
 
           <input
-            className="btn-sm btn-success"
+            className="btn btn-success"
             type="submit"
             onClick={this.handleSubmit}/>
 

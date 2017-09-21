@@ -1,5 +1,5 @@
 .home-welcome {
-  width: 55%;
+  width: 60%;
   margin: inherit;
   background: transparent;
   float: left;
@@ -33,4 +33,9 @@
 
 .home-page h1 {
   color: #333333
+}
+
+.welcome-button {
+  display: inline-flex;
+  padding-right: 30px;
 }

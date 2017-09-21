@@ -9,8 +9,6 @@ class MainHeader extends React.Component {
 
   }
 
-
-
   render() {
     const currentUser = this.props.session.username;
     return (
