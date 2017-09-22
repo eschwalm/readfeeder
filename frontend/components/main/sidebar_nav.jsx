@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
 
 class SidebarNav extends React.Component {
   constructor(props) {
@@ -62,17 +63,15 @@ class SidebarNav extends React.Component {
               All
             </a>
 
-          <a className="add-content-btn">
 
-            <span className="add-content-btn-text">
-              <i className="fa fa-plus" aria-hidden="true"></i>
-              ADD CONTENT
-            </span>
-          </a>
+            <NavLink to="/i/discover" className="add-content-btn">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+                ADD CONTENT
+            </NavLink>
         </div>
       </div>
     );
   }
 }
 
-export default SidebarNav;
+export default withRouter(SidebarNav);
