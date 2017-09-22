@@ -19,7 +19,7 @@ class MainPage extends React.Component {
           <div className="main-content">
             <Switch>
 
-              <Route path="/i/discover" component={FeedIndexContainer}/>
+              <Route path="/i/discover/sources" component={FeedIndexContainer}/>
             </Switch>
           </div>
         </div>
