@@ -19,8 +19,8 @@ class SidebarNav extends React.Component {
 
   toggleNav() {
     if (this.state.isOpen) {
-      document.getElementById("sidenav").style.width = "50px";
-      document.getElementById("main").style.marginLeft = "50px";
+      document.getElementById("sidenav").style.width = "60px";
+      document.getElementById("main").style.marginLeft = "60px";
       this.setState({isOpen: false, content: "sidenav-content hidden"});
     }
     else {
@@ -56,12 +56,12 @@ class SidebarNav extends React.Component {
             Read Later
           </a>
 
-          <label>FEEDS  
-            <a>
+          <label>FEEDS</label>
+            <a className="feed-li-item">
               <i className="fa fa-bars" aria-hidden="true"></i>
               All
             </a>
-          </label>
+
 
         </div>
       </div>

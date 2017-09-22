@@ -16,6 +16,7 @@
   display: list-item;
   padding-left: 25px;
   padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .sidenav .fa {
@@ -25,7 +26,6 @@
 .sidenav a:hover {
   cursor: pointer;
   background-color: #dddddd;
-  
 }
 
 .sidenav-toggle-btn {
@@ -34,6 +34,10 @@
   right: 5px;
   font-size: 24px;
   margin-left: 50px;
+}
+
+.sidenav-toggle-btn:focus {
+  outline: none;
 }
 
 .hidden {
@@ -47,7 +51,16 @@
   list-style: none;
 }
 
+.sidenav label a {
+  width: auto;
+}
+
 .sidenav-content .fa {
   color: #aaa;
   vertical-align: baseline;
+}
+
+.feed-li-item {
+  padding-left: 40px;
+  font-weight: bold;
 }
