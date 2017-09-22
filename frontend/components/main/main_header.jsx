@@ -1,5 +1,4 @@
 import React from 'react';
-// import { logout } from '../../actions/session_actions';
 
 import SessionFormContainer from '../session_form/session_form_container';
 
