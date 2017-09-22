@@ -62,7 +62,13 @@ class SidebarNav extends React.Component {
               All
             </a>
 
+          <a className="add-content-btn">
 
+            <span className="add-content-btn-text">
+              <i className="fa fa-plus" aria-hidden="true"></i>
+              ADD CONTENT
+            </span>
+          </a>
         </div>
       </div>
     );
