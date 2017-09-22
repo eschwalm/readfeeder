@@ -92,7 +92,7 @@ class SessionModal extends React.Component {
   handleDemo() {
     this.props.submitForm({
       username: "Readfeeder_demo",
-      password: "demo_password123",
+      password: "demo_pass123",
       errors: []
     });
   }
