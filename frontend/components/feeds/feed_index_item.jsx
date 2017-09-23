@@ -10,15 +10,15 @@ const FeedIndexItem = ({Feed}) => (
               `?url=${Feed.url}&size=70..120..200`}
               />
         </div>
-        <NavLink
-          to={{pathname: `/i/feeds/${Feed.id}`, name: Feed.name}}
-          style={{ textDecoration: 'none' }}
-          className="feed-index-text"
-          >
-
-          <h6>{Feed.name}</h6>
+        <div className="feed-index-text">
+          <NavLink
+            to={{pathname: `/i/feeds/${Feed.id}`, name: Feed.name}}
+            style={{ color: 'black' }}
+            >
+            <h6>{Feed.name}</h6>
+          </NavLink>
           {Feed.description}
-      </NavLink>
+        </div>
     </li>
 );
 

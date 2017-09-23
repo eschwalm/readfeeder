@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
+import CollectionsIndexContainer
+from '../collections/collections_index_container';
+
 class SidebarNav extends React.Component {
   constructor(props) {
     super(props);
@@ -58,10 +61,13 @@ class SidebarNav extends React.Component {
           </a>
 
           <label>FEEDS</label>
-            <a className="feed-li-item">
-              <i className="fa fa-bars" aria-hidden="true"></i>
-              All
-            </a>
+            <ul>
+              <a className="feed-li-item">
+                <i className="fa fa-bars" aria-hidden="true"></i>
+                All
+              </a>
+              <a><CollectionsIndexContainer /></a>
+            </ul>
 
 
             <NavLink to="/i/discover/sources" className="add-content-btn">

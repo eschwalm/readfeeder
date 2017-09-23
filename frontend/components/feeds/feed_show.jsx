@@ -14,8 +14,7 @@ class FeedShow extends React.Component {
   render() {
     const {articles} = this.props;
     const source = this.props.match.params.sourceId;
-    console.log(source);
-    console.log(articles);
+
     return (
       <ul>
         <h1 className="feed-index-title">{source}</h1>
