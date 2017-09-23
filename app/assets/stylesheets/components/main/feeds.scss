@@ -7,6 +7,7 @@
   margin-bottom: 10px;
   padding: 15px;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .feed-index-icon {
@@ -17,6 +18,8 @@
 
 .feed-index-text {
   padding-left: 15px;
+  text-decoration: none;
+  color: black;
 }
 .feed-index {
   display: block;
@@ -25,4 +28,14 @@
 .feed-index-title {
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.feed-index-image {
+  width: 254px;
+  height: 182px;
+  object-fit: cover;
+}
+
+.feed-index-item a {
+  text-decoration: none;
 }

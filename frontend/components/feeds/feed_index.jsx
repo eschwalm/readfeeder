@@ -17,7 +17,7 @@ class FeedIndex extends React.Component {
 
     return (
       <ul className="feed-index">
-        <h1 className="feed-index-title">Discover Sources</h1>
+        <h1 className="feed-index-title">Add New Sources</h1>
         {feeds.map( (feed, id) => <FeedIndexItem key={id} Feed={feed}/>)}
       </ul>
     );

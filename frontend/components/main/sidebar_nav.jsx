@@ -50,7 +50,7 @@ class SidebarNav extends React.Component {
           </a>
           <a>
             <i className="fa fa-rss" aria-hidden="true"></i>
-            Sources
+            Discover
           </a>
           <a>
             <i className="fa fa-bookmark-o" aria-hidden="true"></i>
