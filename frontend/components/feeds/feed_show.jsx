@@ -16,12 +16,14 @@ class FeedShow extends React.Component {
     const source = this.props.match.params.sourceId;
 
     return (
-      <ul>
+      <div>
         <h1 className="feed-index-title">{source}</h1>
-        { articles.map(
-           (article, id) => <FeedShowItem key={id} article={article}/>)
-        }
-      </ul>
+          <ul className="feed-show-content">
+          { articles.map(
+             (article, id) => <FeedShowItem key={id} article={article}/>)
+          }
+        </ul>
+      </div>
     );
   }
 }

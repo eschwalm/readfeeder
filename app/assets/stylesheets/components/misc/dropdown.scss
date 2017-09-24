@@ -1,0 +1,33 @@
+.dropdown {
+  padding-top: 10px;
+}
+
+.dropdown button {
+  border: 1px solid;
+}
+
+.dropdown button:hover {
+  color: #218838;
+  background-color: #fff;
+}
+
+.dropdown button:focus .btn-outline-success.focus, .show > .btn-outline-success.dropdown-toggle {
+  color: #28a745;
+  background-color: #fff;
+  background-image: none;
+  border-color: #218838;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-outline-success:active, .btn-outline-success.active {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dropdown-menu li a {
+  font-size: 16px;
+  color: black;
+}

@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_ALL_COLLECTIONS,
          RECEIVE_COLLECTION
-       } from '../actions/collections_actions';
+       } from '../actions/collection_actions';
 
 const CollectionsReducer = (state = {}, action) => {
   Object.freeze(state);

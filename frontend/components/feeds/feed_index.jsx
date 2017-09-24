@@ -16,10 +16,12 @@ class FeedIndex extends React.Component {
     const { feeds } = this.props;
 
     return (
-      <ul className="feed-index">
+      <div>
         <h1 className="feed-index-title">Add New Sources</h1>
-        {feeds.map( (feed, id) => <FeedIndexItem key={id} Feed={feed}/>)}
-      </ul>
+        <ul className="feed-index">
+          {feeds.map( (feed, id) => <FeedIndexItem key={id} Feed={feed}/>)}
+        </ul>
+      </div>
     );
   }
 }

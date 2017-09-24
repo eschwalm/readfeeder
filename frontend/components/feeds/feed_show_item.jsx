@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FeedShowItem = ({article}) => (
-  <li className="feed-index-item">
+  <li className="feed-show-item">
     <div >
       <img className="feed-index-image" src={article.urlToImage}/>
     </div>
