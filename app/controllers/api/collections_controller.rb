@@ -43,7 +43,7 @@ class Api::CollectionsController < ApplicationController
 
   private
 
-  def collections_params
+  def collection_params
     params.require(:collection).permit(:user_id, :title)
   end
 end

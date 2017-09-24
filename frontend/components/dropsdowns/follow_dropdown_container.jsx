@@ -2,6 +2,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { allCollections } from '../../selectors/collection_selectors';
+import { createCollection,
+         fetchCollections
+       } from '../../actions/collection_actions';
 
 import FollowDropdown from './follow_dropdown';
 
@@ -11,9 +14,9 @@ const mapStateToProps = (state, { match }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  createCollection: collection => dispatch(createCollection())
 });
 
 export default withRouter(
-  connect(mapStateToProps, null)(FollowDropdown)
+  connect(mapStateToProps, mapDispatchToProps)(FollowDropdown)
 );

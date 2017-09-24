@@ -11,7 +11,10 @@ const FeedIndexItem = ({Feed}) => (
             src={"https://icons.better-idea.org/icon" +
               `?url=${Feed.url}&size=70..120..200`}
               />
-            <FollowDropdownContainer feedId={Feed.id}/>
+            <FollowDropdownContainer
+              feedId={Feed.id}
+              className="follow-dropdown-btn"
+            />
         </div>
 
         <div className="feed-index-text">

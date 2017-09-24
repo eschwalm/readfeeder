@@ -59,8 +59,14 @@ class SidebarNav extends React.Component {
             <i className="fa fa-bookmark-o" aria-hidden="true"></i>
             Read Later
           </a>
+          <div className="separator"></div>
 
-          <label>FEEDS</label>
+          <div  className="container">
+            <label>FEEDS</label>
+            <button className="collection-settings">
+              <i className="fa fa-cog" aria-hidden="true"></i>
+            </button>
+          </div>
             <ul>
               <a className="feed-li-item">
                 <i className="fa fa-bars" aria-hidden="true"></i>

@@ -8,7 +8,6 @@ class CollectionsIndex extends React.Component {
   render() {
     return (
       <li>Collection Item</li>
-
     );
   }
 }

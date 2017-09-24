@@ -19,8 +19,8 @@ export const fetchCollections = () => dispatch => (
 );
 
 export const createCollection = collection => dispatch => (
-  APIUtil.createCollection()
-    .then( collections => dispatch(receiveCollection))
+  APIUtil.createCollection(collection)
+    .then( collection => dispatch(receiveCollection(collection)))
 );
 
 export const fetchCollection = collection => dispatch => (

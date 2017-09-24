@@ -1,15 +1,15 @@
 .feed-index-item {
   border: 2px solid rgba(0, 0, 0, 0.05);
-  display: inline-flex;
-  width: -webkit-fill-available;
-  inline-size: -webkit-fill-available;
+  display: flex;
   font-size: 12px;
   margin: 7px;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
-  max-width: 40%;
+  max-width: 25%;
   float: left;
+  box-sizing: content-box;
+  width: fit-content;
 }
 
 .feed-index-menu {
@@ -28,12 +28,15 @@
   color: black;
 }
 .feed-index {
-  display: block;
+  display: inline-flex;
+  float: left;
+  flex-wrap: wrap;
 }
 
 .feed-index-title {
   padding-top: 20px;
   padding-bottom: 30px;
+  padding-left: 15px;
 }
 
 .feed-index-image {
@@ -46,14 +49,33 @@
   text-decoration: none;
 }
 
+.feed-show-content {
+  display: block;
+}
+
 .feed-show-item {
   border: 2px solid rgba(0, 0, 0, 0.05);
   display: inline-flex;
   width: -webkit-fill-available;
   inline-size: -webkit-fill-available;
-  font-size: 12px;
+  font-size: 14px;
   margin: 7px;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
+  max-width: 90%;
+  min-width: min-content;
+}
+
+.input-group {
+  border: 0.25px solid rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  width: 80%;
+}
+
+.create-collection-form {
+  display: flex;
+  width: inherit;
+  margin-left: 5%;
+  padding-bottom: 15px;
 }

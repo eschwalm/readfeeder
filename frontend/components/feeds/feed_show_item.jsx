@@ -6,7 +6,7 @@ const FeedShowItem = ({article}) => (
       <img className="feed-index-image" src={article.urlToImage}/>
     </div>
     <span className="feed-index-text">
-      <h6>{article.title}</h6>
+      <h5>{article.title}</h5>
       {article.description}
     </span>
   </li>

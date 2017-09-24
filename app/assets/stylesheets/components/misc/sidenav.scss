@@ -48,7 +48,6 @@
 .sidenav label {
   font-size: 14px;
   padding-left: 20px;
-  padding-top: 30px;
   list-style: none;
 }
 
@@ -99,4 +98,29 @@
   background: #218838;
   z-index: 1;
   text-decoration: none;
+}
+
+.collection-settings .fa-cog {
+  right: 5px;
+  font-size: 18px;
+  padding: 0;
+  margin-right: 7px;
+}
+
+// .collection-settings {
+//   display: inline-block;
+//   vertical-align: center;
+//   width: 100%;
+// }
+
+.container {
+  align-items: baseline;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  vertical-align: baseline;
+}
+
+.separator {
+  padding-top: 30px;
 }
