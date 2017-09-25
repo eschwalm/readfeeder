@@ -101,10 +101,18 @@
 }
 
 .collection-settings .fa-cog {
+  outline: none;
   right: 5px;
   font-size: 18px;
   padding: 0;
   margin-right: 7px;
+}
+
+.collection-settings .fa-cog:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
 }
 
 // .collection-settings {
@@ -124,3 +132,5 @@
 .separator {
   padding-top: 30px;
 }
+
+button:focus {outline:0;}

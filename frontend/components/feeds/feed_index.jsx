@@ -15,6 +15,7 @@ class FeedIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchFeeds();
+    this.props.fetchCollections();
   }
 
   update(field) {
@@ -28,10 +29,15 @@ class FeedIndex extends React.Component {
     this.props.createCollection(this.state);
   }
 
+  collectionTitles(collections) {
+    return Object.keys(collections).map( id => collections[id]['title'] );
+  }
+
 
   render() {
-    const { feeds } = this.props;
-    console.log(this.props);
+
+    const { feeds, collections } = this.props;
+
     return (
       <div>
 
@@ -60,7 +66,11 @@ class FeedIndex extends React.Component {
               </div>
           </form>
         <ul className="feed-index">
-          {feeds.map( (feed, id) => <FeedIndexItem key={id} Feed={feed}/>)}
+          {feeds.map( (feed, id) =>
+            <FeedIndexItem
+              key={id}
+              Feed={feed}
+              Collections={collections}/>)}
         </ul>
       </div>
     );

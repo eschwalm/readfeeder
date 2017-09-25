@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import FollowDropdownContainer from '../dropsdowns/follow_dropdown_container';
 
-const FeedIndexItem = ({Feed}) => (
+const FeedIndexItem = ({Feed, Collections}) => (
     <li className="feed-index-item">
 
         <div className="feed-index-menu">
@@ -14,6 +14,7 @@ const FeedIndexItem = ({Feed}) => (
             <FollowDropdownContainer
               feedId={Feed.id}
               className="follow-dropdown-btn"
+              collections={Collections}
             />
         </div>
 

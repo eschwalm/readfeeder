@@ -9,11 +9,12 @@ import { createCollection,
 import FollowDropdown from './follow_dropdown';
 
 const mapStateToProps = (state, { match }) => ({
-  collections: allCollections(state),
+  // collections: allCollections(state),
   sourceId: parseInt(match.params.sourceId)
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchCollections: () => dispatch(fetchCollections()),
   createCollection: collection => dispatch(createCollection())
 });
 

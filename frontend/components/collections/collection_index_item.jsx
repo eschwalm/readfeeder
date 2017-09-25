@@ -5,3 +5,5 @@ const CollectionIndexItem = ({collection}) => (
     {collection.title}
   </li>
 );
+
+export default CollectionIndexItem;

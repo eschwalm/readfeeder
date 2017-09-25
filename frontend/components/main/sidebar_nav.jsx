@@ -61,11 +61,12 @@ class SidebarNav extends React.Component {
           </a>
           <div className="separator"></div>
 
-          <div  className="container">
+
+          <div className="container">
             <label>FEEDS</label>
-            <button className="collection-settings">
-              <i className="fa fa-cog" aria-hidden="true"></i>
-            </button>
+              <button className="collection-settings">
+                <i className="fa fa-cog" aria-hidden="true">
+                </i></button>
           </div>
             <ul>
               <a className="feed-li-item">
