@@ -6,7 +6,7 @@ class Api::CollectionFeedsController < ApplicationController
   end
 
   def create
-    @collection_feed.new(collection_feed_params)
+    @collection_feed = CollectionFeed.new(collection_feed_params)
     if @collection_feed.save
       @collection = @collection_feed.collection
       render 'api/collections/show'

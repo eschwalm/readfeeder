@@ -22,3 +22,8 @@ export const fetchFeed = source => dispatch => (
   APIUtil.fetchFeed(source)
     .then( feed => dispatch(receiveFeed(feed)))
 );
+
+export const addFeed = feed => dispatch => (
+  APIUtil.addFeed(feed)
+    .then( feed => dispatch(receiveFeed(feed)))
+);

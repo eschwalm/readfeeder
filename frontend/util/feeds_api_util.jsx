@@ -15,15 +15,13 @@ export const fetchFeed = (source) => (
   })
 );
 
-export const addFeed = ({feed}) => (
+export const addFeed = ({name, url}) => (
   $.ajax({
     method: 'POST',
     url: 'api/feeds',
-    data: {
-      title: feed.name,
-      url: feed.url,
-      icon_url: "https://icons.better-idea.org/icon" +
-                `?url=${feed.url}&size=70..120..200`
-      }
+    data: {feed: {
+      title: name,
+      url
+      }}
   })
 );

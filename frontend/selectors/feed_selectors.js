@@ -9,3 +9,8 @@ export const feedArticles = state => {
   let articles = values(state.feeds.articles);
   return articles;
 };
+
+export const followedFeeds = state => {
+  let feeds = values(state.feeds);
+  return feeds;
+};

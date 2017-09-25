@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CollectionIndexItem = ({collection}) => (
-  <li>
+  <li className="collection-index-item">
     {collection.title}
   </li>
 );

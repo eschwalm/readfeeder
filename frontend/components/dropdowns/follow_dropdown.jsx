@@ -31,8 +31,9 @@ class FollowDropdown extends React.Component {
     return titles;
   }
 
-
   render() {
+    const { feed } = this.props;
+
     return (
       <div className="follow-dropdown">
         <div className="dropdown">
@@ -49,6 +50,11 @@ class FollowDropdown extends React.Component {
                     <i className="fa fa-rss" aria-hidden="true"></i>
                       <button
                         className="dropdown-collection-item"
+                        onClick={
+                          () => this.props.addFeedToCollection(
+                            { collectionId: collection.id, feedId: feed.id}
+                          )
+                        }
                         >
                         {collection.title}
                       </button>

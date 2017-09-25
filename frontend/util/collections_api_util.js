@@ -20,11 +20,13 @@ export const createCollection = (collection) => (
   })
 );
 
-export const addFeedToCollection = ({ collectionId, feedId }) =>
+export const addFeedToCollection = ({ collectionId, feedId }) => (
   $.ajax({
     method: "POST",
-    url: "/api/collection_feeds",
-    data: {
-      collection_feed: { collection_id: collectionId, feed_id: feedId },
-    },
-  });
+    url: "api/collection_feeds",
+    data: { collection_feed: {
+       collection_id: collectionId,
+       feed_id: feedId
+    }}
+  })
+);
