@@ -11,6 +11,9 @@ export const feedArticles = state => {
 };
 
 export const followedFeeds = state => {
-  let feeds = values(state.feeds);
+  let collectionFeeds = values(state.collections.map( collection =>
+    state.collections[collection]['feeds']
+  ));
+  let feeds = values(state.feeds).includes(collectionFeeds);
   return feeds;
 };

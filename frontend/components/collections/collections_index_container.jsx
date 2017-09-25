@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import {
-  allCollections,
-  feedsbyCollection } from '../../selectors/collection_selectors';
+import { allCollections } from '../../selectors/collection_selectors';
+import { followedFeeds } from '../../selectors/feed_selectors';
 import {
   fetchCollections,
   fetchCollectionFeeds } from '../../actions/collection_actions';
@@ -11,13 +10,11 @@ import {
 import CollectionsIndex from './collections_index';
 
 const mapStateToProps = ({entities}) => ({
-  collections: allCollections(entities),
-  followedFeeds: feedsbyCollection(entities)
+  collections: allCollections(entities)
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollections: () => dispatch(fetchCollections()),
-  fetchCollectionFeeds: () => dispatch(fetchCollectionFeeds())
+  fetchCollections: () => dispatch(fetchCollections())
 });
 
 export default withRouter(

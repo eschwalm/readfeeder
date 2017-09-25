@@ -116,7 +116,29 @@
 }
 
 .collection-index-item {
+  padding-top: 5px;
+  margin-left: 25px;
   font-weight: bold;
+  font-size: 13px;
+}
+
+.collection-feed-index {
+  margin-left: 25px;
+}
+
+.collection-feed-icon {
+  width: 30px;
+}
+
+.collection-feed-item {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+}
+
+.collection-feed-item a {
+  color: black;
+  text-decoration: none;
 }
 
 .container {

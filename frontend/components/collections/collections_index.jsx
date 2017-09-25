@@ -9,12 +9,10 @@ class CollectionsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCollections();
-    this.props.fetchCollectionFeeds();
   }
 
   render() {
     const {collections} = this.props;
-
     return (
       <ul>
         {collections.map( (collection, id) =>

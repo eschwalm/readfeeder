@@ -73,7 +73,7 @@ class SidebarNav extends React.Component {
                 <i className="fa fa-bars" aria-hidden="true"></i>
                 All
               </a>
-              <a><CollectionsIndexContainer /></a>
+              <CollectionsIndexContainer />
             </ul>
 
 
