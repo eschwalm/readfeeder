@@ -9,6 +9,7 @@ class CollectionsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCollections();
+    this.props.fetchCollectionFeeds();
   }
 
   render() {

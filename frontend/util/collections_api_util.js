@@ -30,3 +30,10 @@ export const addFeedToCollection = ({ collectionId, feedId }) => (
     }}
   })
 );
+
+export const fetchCollectionFeeds = () => (
+  $.ajax({
+    method: 'GET',
+    url: "api/collection_feeds"
+  })
+);

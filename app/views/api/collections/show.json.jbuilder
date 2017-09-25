@@ -1,2 +1,2 @@
 json.extract! @collection, :id, :title
-json.feedIds @collection.feed_ids
+json.feedIds @collection.collection_feeds

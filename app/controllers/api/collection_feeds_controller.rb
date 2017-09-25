@@ -1,8 +1,11 @@
 class Api::CollectionFeedsController < ApplicationController
 
   def index
-    @feeds = current_user.feeds.includes(:collections)
-    render 'api/feeds/index'
+    @CollectionFeeds = CollectionFeed.all
+  end
+
+  def show
+    @collection_feed = CollectionFeed.find(params[:collection_id])
   end
 
   def create
