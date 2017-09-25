@@ -11,7 +11,9 @@ const CollectionsReducer = (state = {}, action) => {
     case RECEIVE_ALL_COLLECTIONS:
       return action.collections;
     case RECEIVE_COLLECTION:
-      return action.collection;
+      let newState = merge({}, state);
+      newState[action.collection.id] = action.collection;
+      return newState;
     default:
       return state;
   }

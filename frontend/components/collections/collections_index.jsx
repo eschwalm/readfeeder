@@ -11,6 +11,12 @@ class CollectionsIndex extends React.Component {
     this.props.fetchCollections();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.collections !== this.props.collections) {
+
+    }
+  }
+
   render() {
     const {collections} = this.props;
     return (
