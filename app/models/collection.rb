@@ -14,4 +14,6 @@ class Collection < ApplicationRecord
   validates :title, uniqueness: { scope: :user_id }
 
   belongs_to :user
+  has_many :collection_feeds
+  has_many :feeds, through: :collection_feeds
 end

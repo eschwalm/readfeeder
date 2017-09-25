@@ -13,10 +13,6 @@ class FollowDropdown extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value });
@@ -28,24 +24,15 @@ class FollowDropdown extends React.Component {
     this.props.createCollection(this.state);
   }
 
-
   collectionList() {
     let collections = this.props.collections;
     let titles = Object.keys(collections)
-                  .map( id => collections[id]['title'] );
+                  .map( id => collections[id]);
     return titles;
   }
 
-  displayCollections() {
-    return (
-      <ul>
-        {this.collectionList().map( collection => <li>collection.title</li>)}
-      </ul>
-    );
-  }
 
   render() {
-
     return (
       <div className="follow-dropdown">
         <div className="dropdown">
@@ -56,7 +43,18 @@ class FollowDropdown extends React.Component {
             Follow
             <span className="caret"></span></button>
             <ul className="dropdown-menu dropdown-menu-right">
-              {this.collectionList()}
+
+                {this.collectionList().map( (collection) =>
+                  <li key={collection.id}>
+                    <i className="fa fa-rss" aria-hidden="true"></i>
+                      <button
+                        className="dropdown-collection-item"
+                        >
+                        {collection.title}
+                      </button>
+                  </li>
+                )}
+
 
               <li className="dropdown-divider"></li>
 

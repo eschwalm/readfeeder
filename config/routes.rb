@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :collections, only: [:create, :index, :show, :update, :destroy]
-    resources :feeds, only: [:show]
+    resources :feeds, only: [:show, :create, :destroy]
+    resources :collection_feeds, only: [:create, :destroy]
   end
 
   root "static_pages#root"

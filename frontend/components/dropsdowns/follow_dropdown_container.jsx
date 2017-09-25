@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 import { allCollections } from '../../selectors/collection_selectors';
 import { createCollection,
-         fetchCollections
+         fetchCollections,
+         addFeedToCollection
        } from '../../actions/collection_actions';
 
 import FollowDropdown from './follow_dropdown';
@@ -15,7 +16,8 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCollections: () => dispatch(fetchCollections()),
-  createCollection: collection => dispatch(createCollection())
+  createCollection: collection => dispatch(createCollection()),
+  addFeedToCollection: collectionFeed => dispatch(addFeedToCollection())
 });
 
 export default withRouter(

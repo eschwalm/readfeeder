@@ -27,3 +27,8 @@ export const fetchCollection = collection => dispatch => (
   APIUtil.fetchCollection()
     .then( feeds => dispatch(receiveCollection(feeds)))
 );
+
+export const addFeedToCollection = collectionFeed => dispatch => (
+  APIUtil.addFeedToCollection(collectionFeed)
+    .then( collection => dispatch(receiveCollection(collection)))
+);

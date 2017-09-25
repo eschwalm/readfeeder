@@ -69,6 +69,7 @@ class FeedIndex extends React.Component {
           {feeds.map( (feed, id) =>
             <FeedIndexItem
               key={id}
+              feedId={id}
               Feed={feed}
               Collections={collections}/>)}
         </ul>
