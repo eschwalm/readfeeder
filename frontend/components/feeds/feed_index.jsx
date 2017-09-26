@@ -27,6 +27,7 @@ class FeedIndex extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createCollection(this.state);
+    this.setState({title: ""});
   }
 
   collectionTitles(collections) {
