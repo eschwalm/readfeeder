@@ -4,7 +4,10 @@ import CollectionFeedItem from './collection_feed_item';
 
 const CollectionIndexItem = ({collection}) => (
   <li className="collection-index-item" key={collection.id}>
-    {collection.title}
+    <div className="collection-item-header">
+      <i className="fa fa-angle-down" aria-hidden="true"></i>
+      {collection.title}
+    </div>
     <ul>
       {collection.feeds.map( (feed, id) =>
         <CollectionFeedItem key={id} feed={feed}/>
