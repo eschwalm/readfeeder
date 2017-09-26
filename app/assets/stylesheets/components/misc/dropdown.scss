@@ -61,11 +61,23 @@
   outline: none;
 }
 
-.dropdown-collection-item {
-  padding: 3px;
-  padding-left: 10px;
+.dropdown-collection-item-add {
+  float: right;
+  margin-right: 5px;
+  color: #28a745;
+  font-size: 20px;
+  display: inline-flex;
+}
+
+.dropdown-collection-item-remove {
+  float: right;
+  margin-right: 5px;
+  color: #aaa;
+  font-size: 20px;
+  display: inline-flex;
 }
 
 .dropdown-menu .fa-rss {
   color: #aaa;
+  margin-right: 10px;
 }

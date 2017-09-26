@@ -37,3 +37,8 @@ export const fetchCollectionFeeds = () => dispatch => (
   APIUtil.fetchCollectionFeeds()
     .then( collectionFeeds => dispatch(receiveCollections(collectionFeeds)))
 );
+
+export const deleteFeedFromCollection = collectionFeed => dispatch => (
+  APIUtil.deleteFeedFromCollection(collectionFeed)
+    .then( collection => dispatch(receiveCollection(collection)))
+);

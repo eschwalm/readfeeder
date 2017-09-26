@@ -5,6 +5,8 @@ import MainHeaderContainer from './main_header_container';
 import SidebarNav from './sidebar_nav';
 import FeedIndexContainer from '../feeds/feed_index_container';
 import FeedShowContainer from '../feeds/feed_show_container';
+import CollectionIndexContainer
+  from '../collections/collections_index_container';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class MainPage extends React.Component {
           <div className="main-content">
             <Switch>
 
+              <Route path="/i/collections" component={CollectionIndexContainer} />
               <Route path="/i/feeds/:sourceId" component={FeedShowContainer}/>
               <Route path="/i/discover/sources" component={FeedIndexContainer}/>
             </Switch>

@@ -1,6 +1,7 @@
 import React from 'react';
 import CollectionsIndexContainer
   from '../collections/collections_index_container';
+import values from 'lodash/values';
 
 class FollowDropdown extends React.Component {
   constructor(props) {
@@ -31,6 +32,29 @@ class FollowDropdown extends React.Component {
     return titles;
   }
 
+  feedFollowed(collection, feed) {
+    for (let i = 0; i < collection.feeds.length; i++) {
+      if (collection.feeds[i].feed_id === this.props.feed.id) {
+        return (
+          <button
+            className="dropdown-collection-item-remove"
+            onClick={
+              () => this.props.deleteFeedFromCollection(
+                { collectionId: collection.id, feedId: feed.id}
+              )}><i className="fa fa-minus-circle" aria-hidden="true"></i>
+          </button>);
+      }
+    }
+    return (
+      <button
+        className="dropdown-collection-item-add"
+        onClick={
+          () => this.props.addFeedToCollection(
+            { collectionId: collection.id, feedId: feed.id}
+          )}><i className="fa fa-plus-circle" aria-hidden="true"></i>
+      </button>);
+  }
+
   render() {
     const { feed } = this.props;
 
@@ -48,16 +72,10 @@ class FollowDropdown extends React.Component {
                 {this.collectionList().map( (collection, id) =>
                   <li key={id}>
                     <i className="fa fa-rss" aria-hidden="true"></i>
-                      <button
-                        className="dropdown-collection-item"
-                        onClick={
-                          () => this.props.addFeedToCollection(
-                            { collectionId: collection.id, feedId: feed.id}
-                          )
-                        }
-                        >
-                        {collection.title}
-                      </button>
+                    {collection.title}
+                    {
+                      (this.feedFollowed(collection, feed))
+                    }
                   </li>
                 )}
 

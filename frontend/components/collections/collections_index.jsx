@@ -11,16 +11,10 @@ class CollectionsIndex extends React.Component {
     this.props.fetchCollections();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.collections !== this.props.collections) {
-
-    }
-  }
-
   render() {
     const {collections} = this.props;
     return (
-      <ul>
+      <ul className="collection-index">
         {collections.map( (collection, id) =>
           <CollectionIndexItem key={id} collection={collection}/>
         )}

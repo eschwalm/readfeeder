@@ -64,9 +64,11 @@ class SidebarNav extends React.Component {
 
           <div className="container">
             <label>FEEDS</label>
-              <button className="collection-settings">
+              <NavLink
+                to="/i/collections"
+                className="collection-settings">
                 <i className="fa fa-cog" aria-hidden="true">
-                </i></button>
+                </i></NavLink>
           </div>
             <ul>
               <a className="feed-li-item">

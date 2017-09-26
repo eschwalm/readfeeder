@@ -10,10 +10,5 @@ export const feedArticles = state => {
   return articles;
 };
 
-export const followedFeeds = state => {
-  // let collectionFeeds = values(state.collections.map( collection =>
-  //   state.collections[collection]['feeds']
-  // ));
-  // let feeds = values(state.feeds).includes(collectionFeeds);
-  // return feeds;
+export const followedFeeds = ({ entities: { collections }}) => {
 };

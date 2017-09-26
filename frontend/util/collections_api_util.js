@@ -31,6 +31,17 @@ export const addFeedToCollection = ({ collectionId, feedId }) => (
   })
 );
 
+export const deleteFeedFromCollection = ({ collectionId, feedId }) => (
+  $.ajax({
+    method: 'DELETE',
+    url: "api/collection_feeds/:id",
+    data: {collection_feed: {
+      collection_id: collectionId,
+      feed_id: feedId
+    }}
+  })
+);
+
 export const fetchCollectionFeeds = () => (
   $.ajax({
     method: 'GET',
