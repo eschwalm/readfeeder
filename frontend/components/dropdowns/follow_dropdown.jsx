@@ -70,7 +70,7 @@ class FollowDropdown extends React.Component {
             <ul className="dropdown-menu dropdown-menu-right">
 
                 {this.collectionList().map( (collection, id) =>
-                  <li key={id}>
+                  <li key={id} className="add-collection-li">
                     <i className="fa fa-rss" aria-hidden="true"></i>
                     {collection.title}
                     {

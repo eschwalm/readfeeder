@@ -9,7 +9,7 @@ const FeedsReducer = (state = {}, action) => {
     case RECEIVE_FEEDS:
       return action.feeds.sources;
     case RECEIVE_FEED:
-      return action.feed;
+      return merge({}, state, action.feed);
     default:
       return state;
   }

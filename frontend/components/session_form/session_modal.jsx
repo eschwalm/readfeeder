@@ -67,16 +67,21 @@ class SessionModal extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({errors: [nextProps.errors]});
+    this.setState({errors: nextProps.errors});
   }
 
   displayErrors() {
     return (
-      <ul>
-        {this.state.errors.map( (error, i) => (
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
+      <div>
+        <ul className="session-errors">
+          {this.state.errors.map( (error, i) => (
+            <li
+              key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 
@@ -139,7 +144,7 @@ class SessionModal extends React.Component {
 
           <div
             ref={subtitle => this.subtitle = subtitle}>
-            {this.displayErrors()}
+              {this.displayErrors()}
           </div>
 
             Username
