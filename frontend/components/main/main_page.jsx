@@ -7,6 +7,7 @@ import FeedIndexContainer from '../feeds/feed_index_container';
 import FeedShowContainer from '../feeds/feed_show_container';
 import CollectionIndexContainer
   from '../collections/collections_index_container';
+import CollectionShowContainer from '../collections/collection_show_container';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -23,8 +24,13 @@ class MainPage extends React.Component {
           <div className="main-content">
             <Switch>
 
-              <Route path="/i/collections" component={CollectionIndexContainer} />
-              <Route path="/i/feeds/:sourceId" component={FeedShowContainer}/>
+              <Route
+                exact path="/i/collections"
+                component={CollectionIndexContainer} />
+              <Route
+                exact path="/i/collections/:category"
+                component={CollectionShowContainer} />
+              <Route path="/i/feeds/:source" component={FeedShowContainer}/>
               <Route path="/i/discover/sources" component={FeedIndexContainer}/>
             </Switch>
           </div>

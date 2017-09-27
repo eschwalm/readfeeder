@@ -1,7 +1,7 @@
 class Api::CollectionFeedsController < ApplicationController
 
   def index
-    @CollectionFeeds = CollectionFeed.all
+    @collection_feeds = CollectionFeed.all
   end
 
   def show

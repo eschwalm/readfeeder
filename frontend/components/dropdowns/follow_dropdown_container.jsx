@@ -15,7 +15,7 @@ import FollowDropdown from './follow_dropdown';
 
 const mapStateToProps = (state, { match }) => ({
   // followedFeeds: followedFeeds(state),
-  sourceId: parseInt(match.params.sourceId)
+  source: parseInt(match.params.source)
 });
 
 const mapDispatchToProps = dispatch => ({

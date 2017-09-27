@@ -12,19 +12,19 @@ class FeedShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchFeed(this.props.match.params.sourceId);
+    this.props.fetchFeed(this.props.match.params.source);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.sourceId !==
-        nextProps.match.params.sourceId) {
-      this.props.fetchFeed(nextProps.match.params.sourceId);
+    if (this.props.match.params.source !==
+        nextProps.match.params.source) {
+      this.props.fetchFeed(nextProps.match.params.source);
     }
   }
 
   render() {
     const {articles} = this.props;
-    const source = this.props.match.params.sourceId;
+    const source = this.props.match.params.source;
 
     return (
       <div>

@@ -20,11 +20,11 @@ export const fetchCollections = () => dispatch => (
 
 export const createCollection = collection => dispatch => (
   APIUtil.createCollection(collection)
-    .then( collection => dispatch(receiveCollection(collection)))
+    .then( newCollection => dispatch(receiveCollection(newCollection)))
 );
 
 export const fetchCollection = collection => dispatch => (
-  APIUtil.fetchCollection()
+  APIUtil.fetchCollection(collection)
     .then( feeds => dispatch(receiveCollection(feeds)))
 );
 
@@ -41,4 +41,9 @@ export const fetchCollectionFeeds = () => dispatch => (
 export const deleteFeedFromCollection = collectionFeed => dispatch => (
   APIUtil.deleteFeedFromCollection(collectionFeed)
     .then( collection => dispatch(receiveCollection(collection)))
+);
+
+export const fetchCollectionFeed = collection => dispatch => (
+  APIUtil.fetchCollectionFeed(collection)
+    .then( collectionFeed => dispatch(receiveCollection(collectionFeed)))
 );

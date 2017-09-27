@@ -3,9 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { allCollections } from '../../selectors/collection_selectors';
 import { followedFeeds } from '../../selectors/feed_selectors';
-import {
-  fetchCollections,
-  fetchCollectionFeeds } from '../../actions/collection_actions';
+import { fetchCollections } from '../../actions/collection_actions';
 
 import CollectionsIndex from './collections_index';
 

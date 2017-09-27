@@ -5,10 +5,10 @@ export const fetchCollections = () => (
   })
 );
 
-export const fetchCollection = (collectionId) => (
+export const fetchCollection = (collection) => (
   $.ajax({
     method: 'GET',
-    url: `api/collections/${collectionId}`
+    url: `api/collections/${collection.id}`
   })
 );
 
@@ -46,5 +46,13 @@ export const fetchCollectionFeeds = () => (
   $.ajax({
     method: 'GET',
     url: "api/collection_feeds"
+  })
+);
+
+export const fetchCollectionFeed = (collection) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/collection_feeds/:id`,
+    data: { collection_id: collection.id }
   })
 );

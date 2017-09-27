@@ -5,6 +5,10 @@ import CollectionIndexItem from './collection_index_item';
 class CollectionsIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      articles: []
+    };
   }
 
   componentDidMount() {
