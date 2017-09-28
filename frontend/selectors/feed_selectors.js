@@ -10,5 +10,7 @@ export const feedArticles = state => {
   return articles;
 };
 
-export const followedFeeds = ({ entities: { collections }}) => {
+
+export const collectionFeeds = state => {
+  return state.feeds;
 };

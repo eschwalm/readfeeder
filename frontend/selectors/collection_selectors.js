@@ -6,7 +6,7 @@ export const allCollections = state => {
   return collections;
 };
 
-export const collectionFeed = (state, { match }) => {
+export const collectionFeed = (state, match) => {
   let id = Object.keys(state.collections).find( idx =>
     state.collections[idx].title.toLowerCase() === match.params.category
   );

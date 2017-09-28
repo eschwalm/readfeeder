@@ -8,6 +8,7 @@ import FeedShowContainer from '../feeds/feed_show_container';
 import CollectionIndexContainer
   from '../collections/collections_index_container';
 import CollectionShowContainer from '../collections/collection_show_container';
+import { collectionFeed } from '../../selectors/collection_selectors';
 
 class MainPage extends React.Component {
   constructor(props) {

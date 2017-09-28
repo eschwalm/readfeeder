@@ -5,10 +5,10 @@ export const fetchCollections = () => (
   })
 );
 
-export const fetchCollection = (collection) => (
+export const fetchCollection = (id) => (
   $.ajax({
     method: 'GET',
-    url: `api/collections/${collection.id}`
+    url: `api/collections/${id}`
   })
 );
 

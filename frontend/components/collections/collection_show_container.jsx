@@ -1,23 +1,29 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import find from 'lodash/find';
+import { LOCATION_CHANGE } from 'react-router-redux';
+import values from 'lodash/values';
 
-import { feedArticles, allFeeds } from '../../selectors/feed_selectors';
-import { fetchFeed } from '../../actions/feeds_actions';
+import {
+  feedArticles,
+  allFeeds,
+  collectionFeeds } from '../../selectors/feed_selectors';
+import { fetchFeed, fetchCollectionFeed } from '../../actions/feeds_actions';
 import { collectionFeed } from '../../selectors/collection_selectors';
 import { fetchCollection } from '../../actions/collection_actions';
 
 import CollectionShow from './collection_show';
 
-const mapStateToProps = ({entities}, ownProps) => ({
-  collection: collectionFeed(entities, ownProps),
-  articles: feedArticles(entities)
+const mapStateToProps = ({entities}, { match }) => ({
+    collection: collectionFeed(entities, match),
+    feeds: collectionFeeds(entities),
+    articles: feedArticles(entities)
 });
+
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCollection: (collection) =>
     dispatch(fetchCollection(collection)),
-  fetchFeed: (source) => dispatch(fetchFeed(source))
+  fetchCollectionFeed: (source) => dispatch(fetchCollectionFeed(source))
 });
 
 export default withRouter(
