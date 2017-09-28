@@ -129,6 +129,10 @@ a .collection-settings .fa-cog:hover {
 }
 
 .collection-index-item {
+  overflow-y: scroll;
+}
+
+.collection-index-item {
   padding-top: 5px;
   font-weight: bold;
   font-size: 13px;
@@ -155,9 +159,9 @@ a .collection-settings .fa-cog:hover {
   text-decoration: none;
 }
 
-.collection-index {
-  overflow: scroll;
-}
+// .collection-index {
+//   overflow: scroll;
+// }
 
 .container {
   align-items: baseline;

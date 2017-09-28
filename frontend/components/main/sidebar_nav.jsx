@@ -76,13 +76,15 @@ class SidebarNav extends React.Component {
                 <i className="fa fa-bars" aria-hidden="true"></i>
                 All
               </a>
-              <CollectionsIndexContainer />
+
+                <CollectionsIndexContainer />
+
             </ul>
 
 
             <NavLink to="/i/discover/sources" className="add-content-btn">
-                <i className="fa fa-plus" aria-hidden="true"></i>
-                ADD CONTENT
+              <i className="fa fa-plus" aria-hidden="true"></i>
+              ADD CONTENT
             </NavLink>
         </div>
       </div>

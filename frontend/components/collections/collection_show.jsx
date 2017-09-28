@@ -18,22 +18,13 @@ class CollectionShow extends React.Component {
 
   }
 
-  componentWillMount() {
-    // CollectionShow.defaultProps = {
-    //   collection: {},
-    //   feeds: {},
-    //   articles: []
-    // };
-  }
-
-  componentDidMount() {
-    this.props.collection.feeds.forEach( feed =>
-      this.props.fetchCollectionFeed(feed.feed_id)
-    );
-  }
+  // componentDidMount() {
+  //   this.props.collection.feeds.forEach( feed =>
+  //     this.props.fetchCollectionFeed(feed.feed_id)
+  //   );
+  // }
 
   componentWillReceiveProps(nextProps) {
-    const colFeeds = nextProps.collection.feeds;
     if (nextProps.location.pathname !== this.props.location.pathname) {
       nextProps.collection.feeds.forEach( feed =>
         this.props.fetchCollectionFeed(feed.feed_id)
