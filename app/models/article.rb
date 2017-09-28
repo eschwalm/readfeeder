@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   validates :source, :url, presence: true
-  validates :user_id, uniqueness: { scope: :url }
+  validates :url, uniqueness: { scope: :user_id }
 
   belongs_to :user
 end

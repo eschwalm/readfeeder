@@ -30,7 +30,7 @@ class FeedShow extends React.Component {
   }
 
   render() {
-    const {articles, feed} = this.props;
+    const {articles, feed } = this.props;
     const source = this.props.match.params.source;
 
     return (
@@ -43,7 +43,9 @@ class FeedShow extends React.Component {
               { articles.map(
                 (article, id) => <FeedShowItem
                 key={`${source}-${id}`}
-                article={article}/>)
+                article={article}
+                source={feed.name}
+                />)
               }
               </ul>
           </div>

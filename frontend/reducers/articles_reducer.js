@@ -12,7 +12,7 @@ export const ArticlesReducer = (state = {}, action) => {
     case RECEIVE_SAVED_ARTICLES:
       return action.saved;
     case RECEIVE_ARTICLE:
-    return merge({}, state, action.saved);
+    return action.saved;
     default:
       return state;
   }

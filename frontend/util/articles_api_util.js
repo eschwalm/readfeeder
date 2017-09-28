@@ -9,7 +9,7 @@ export const saveArticle = article => (
   $.ajax({
     method: 'POST',
     url: 'api/articles',
-    data: article
+    data: {article}
   })
 );
 

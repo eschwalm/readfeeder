@@ -8,6 +8,7 @@ class Api::ArticlesController < ApplicationController
     @article.user_id = current_user.id
 
     if @article.save
+      @articles = current_user.articles
       render 'api/articles/index'
     else
       render json: @article.errors.full_messages, status: 422
@@ -17,6 +18,7 @@ class Api::ArticlesController < ApplicationController
   def destroy
     article = Article.find(params[:id])
     article.destroy
+    @articles = current_user.articles
     render 'api/articles/index'
   end
 

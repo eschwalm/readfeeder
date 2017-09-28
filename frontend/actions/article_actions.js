@@ -13,17 +13,17 @@ const receiveArticle = saved => ({
   saved
 });
 
-export const fetchSavedArticles = () => (
+export const fetchSavedArticles = () => dispatch => (
   APIUtil.fetchSavedArticles()
-    .then( articles => receiveSavedArticles(articles))
+    .then( articles => dispatch(receiveSavedArticles(articles)))
 );
 
-export const saveArticle = article => (
+export const saveArticle = article => dispatch => (
   APIUtil.saveArticle(article)
-    .then( savedArticle => receiveArticle(savedArticle))
+    .then( savedArticle => dispatch(receiveArticle(savedArticle)))
 );
 
-export const removeArticle = id => (
+export const removeArticle = id => dispatch => (
   APIUtil.removeArticle(id)
-    .then( article => receiveArticle(article))
+    .then( article => dispatch(receiveArticle(article)))
 );

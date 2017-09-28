@@ -1,11 +1,19 @@
 import React from 'react';
 
-const FeedShowItem = ({article}) => (
+import SaveArticleButtonContainer
+  from '../articles/save_article_button_container';
+
+const FeedShowItem = ({article, source, saved}) => (
   <li className="feed-show-item">
     <div >
       <img className="feed-index-image" src={article.urlToImage}/>
     </div>
     <span className="feed-index-text">
+      <SaveArticleButtonContainer
+        article={article}
+        source={source}
+        saved={saved}
+        />
       <h5>{article.title}</h5>
         {
           article.author &&

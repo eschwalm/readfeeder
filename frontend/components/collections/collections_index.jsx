@@ -11,6 +11,7 @@ class CollectionsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCollections();
     this.props.fetchFeeds();
+    this.props.fetchSavedArticles();
   }
 
   render() {

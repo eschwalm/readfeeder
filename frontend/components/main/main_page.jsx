@@ -8,12 +8,14 @@ import FeedShowContainer from '../feeds/feed_show_container';
 import CollectionIndexContainer
   from '../collections/collections_index_container';
 import CollectionShowContainer from '../collections/collection_show_container';
-import { collectionFeed } from '../../selectors/collection_selectors';
 import SavedArticlesContainer from '../articles/saved_articles_container';
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
   }
 
   render() {

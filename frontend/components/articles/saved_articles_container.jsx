@@ -6,10 +6,12 @@ import {
   saveArticle,
   removeArticle
 } from '../../actions/article_actions';
+import { savedArticles } from '../../selectors/article_selectors';
 import SavedArticles from './saved_articles';
 
 const mapStateToProps = ({entities}) => ({
-  saved: entities.saved
+  saved: entities.saved,
+  article: entities.article
 });
 
 const mapDispatchToProps = dispatch => ({
