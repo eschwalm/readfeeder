@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { feedArticles } from '../../selectors/feed_selectors';
+import { feedArticles, currentFeed } from '../../selectors/feed_selectors';
 import { fetchFeed } from '../../actions/feeds_actions';
 import FeedShow from './feed_show';
 
-const mapStateToProps = ({entities}, ownProps) => ({
-  articles: feedArticles(entities)
+const mapStateToProps = ({entities}, {match}) => ({
+  articles: feedArticles(entities),
+  feed: currentFeed(entities, match)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

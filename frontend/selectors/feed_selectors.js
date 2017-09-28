@@ -2,6 +2,8 @@ import values from 'lodash/values';
 import includes from 'lodash/includes';
 import filter from 'lodash/filter';
 import collectionFeed from './collection_selectors';
+import flatten from 'lodash/flatten';
+import find from 'lodash/find';
 
 export const allFeeds = state => {
   let feeds = values(state.feeds);
@@ -13,6 +15,26 @@ export const feedArticles = state => {
   return articles;
 };
 
+export const currentFeed = (state, match) => {
+  let current = find(
+    state.feeds, (feed) => feed.id === match.params.source);
+  return current;
+};
+
+export const followedFeeds = (state, match) => {
+  let collectionFeeds = flatten(
+    values(state.collections).map( col => col.feeds));
+  let feeds = values(collectionFeeds).map( feed => feed.feed_id);
+  let currentFeeds = {};
+
+  values(state.feeds).map( feed => {
+    if (includes(feeds, feed.id)) {
+      currentFeeds[feed.id] = feed;
+    }
+  });
+
+  return currentFeeds;
+};
 
 export const collectionFeeds = (state, match) => {
   let id = Object.keys(state.collections).find( idx =>

@@ -11,6 +11,13 @@ class FeedShow extends React.Component {
     };
   }
 
+  componentWillMount() {
+    FeedShow.defaultProps = {
+      articles: {},
+      feed: { name: "Feed" }
+    };
+  }
+
   componentDidMount() {
     this.props.fetchFeed(this.props.match.params.source);
   }
@@ -23,19 +30,25 @@ class FeedShow extends React.Component {
   }
 
   render() {
-    const {articles} = this.props;
+    const {articles, feed} = this.props;
     const source = this.props.match.params.source;
 
+    console.log(this.props);
     return (
       <div>
-        <h1 className="feed-index-title">{source}</h1>
-          <ul className="feed-show-content">
-          { articles.map(
-             (article, id) => <FeedShowItem
-             key={`${source}-${id}`}
-             article={article}/>)
-          }
-        </ul>
+        {
+          feed && articles &&
+          <div>
+            <h1 className="feed-index-title">{feed.name}</h1>
+            <ul className="feed-show-content">
+              { articles.map(
+                (article, id) => <FeedShowItem
+                key={`${source}-${id}`}
+                article={article}/>)
+              }
+              </ul>
+          </div>
+        }
       </div>
     );
   }

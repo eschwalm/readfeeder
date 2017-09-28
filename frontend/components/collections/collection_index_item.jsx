@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import CollectionFeedItem from './collection_feed_item';
 
 
-const CollectionIndexItem = ({collection}) => (
+const CollectionIndexItem = ({collection, feeds}) => (
   <li className="collection-index-item" key={collection.id}>
 
 
@@ -23,8 +23,8 @@ const CollectionIndexItem = ({collection}) => (
       </NavLink>
 
     <ul className="collection-index-feeds">
-      {collection.feeds.map( (feed, id) =>
-        <CollectionFeedItem key={id} feed={feed}/>
+      {collection.feeds && collection.feeds.map( (src, id) =>
+        <CollectionFeedItem key={id} feed={feeds[src.feed_id]}/>
       )}
     </ul>
   </li>
