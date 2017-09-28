@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SaveArticleButtonContainer from './save_article_button_container';
+import SavedArticleItem from './saved_article_item';
 
 class SavedArticles extends React.Component {
   constructor(props) {
@@ -12,10 +12,17 @@ class SavedArticles extends React.Component {
   }
 
   render() {
+    const { saved } = this.props;
+    console.log(this.props);
     return (
       <div>
-        <h1>Saved Articles Page!</h1>
-        <SaveArticleButtonContainer />
+        <h1 className="feed-index-title">Saved Articles</h1>
+        <ul className="saved-articles-index">
+          {saved.map( (article, i) => <SavedArticleItem
+              key={i}
+              article={article}
+              saved={saved}/>)}
+        </ul>
       </div>
     );
   }

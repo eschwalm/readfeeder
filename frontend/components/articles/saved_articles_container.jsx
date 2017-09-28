@@ -10,7 +10,7 @@ import { savedArticles } from '../../selectors/article_selectors';
 import SavedArticles from './saved_articles';
 
 const mapStateToProps = ({entities}) => ({
-  saved: entities.saved,
+  saved: savedArticles(entities),
   article: entities.article
 });
 
