@@ -9,6 +9,7 @@ import CollectionIndexContainer
   from '../collections/collections_index_container';
 import CollectionShowContainer from '../collections/collection_show_container';
 import { collectionFeed } from '../../selectors/collection_selectors';
+import SavedArticlesContainer from '../articles/saved_articles_container';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class MainPage extends React.Component {
           <div className="main-content">
             <Switch>
 
+              <Route path="/i/saved" component={SavedArticlesContainer} />
               <Route
                 exact path="/i/collections"
                 component={CollectionIndexContainer} />

@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925052820) do
+ActiveRecord::Schema.define(version: 20170928173916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "source"
+    t.string "author"
+    t.text "description"
+    t.string "publishedAt"
+    t.string "title"
+    t.string "url"
+    t.string "urlToImage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "url"], name: "index_articles_on_user_id_and_url", unique: true
+  end
 
   create_table "collection_feeds", force: :cascade do |t|
     t.integer "collection_id", null: false

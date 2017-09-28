@@ -55,10 +55,10 @@ class SidebarNav extends React.Component {
             <i className="fa fa-rss" aria-hidden="true"></i>
             Discover
           </a>
-          <a>
+          <NavLink to="/i/saved">
             <i className="fa fa-bookmark-o" aria-hidden="true"></i>
             Read Later
-          </a>
+          </NavLink>
           <div className="separator"></div>
 
 

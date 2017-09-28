@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :collections
   has_many :collection_feeds, through: :collections
   has_many :feeds, through: :collections
+  has_many :articles
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
