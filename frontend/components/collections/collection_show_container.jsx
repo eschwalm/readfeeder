@@ -13,9 +13,9 @@ import { fetchCollection } from '../../actions/collection_actions';
 
 import CollectionShow from './collection_show';
 
-const mapStateToProps = ({entities}, { match }) => ({
+const mapStateToProps = ({entities}, {match}) => ({
     collection: collectionFeed(entities, match),
-    feeds: collectionFeeds(entities),
+    feeds: collectionFeeds(entities, match),
     articles: feedArticles(entities)
 });
 

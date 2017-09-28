@@ -19,6 +19,17 @@ class CollectionShow extends React.Component {
   }
 
   componentWillMount() {
+    // CollectionShow.defaultProps = {
+    //   collection: {},
+    //   feeds: {},
+    //   articles: []
+    // };
+  }
+
+  componentDidMount() {
+    this.props.collection.feeds.forEach( feed =>
+      this.props.fetchCollectionFeed(feed.feed_id)
+    );
   }
 
   componentWillReceiveProps(nextProps) {
@@ -61,12 +72,14 @@ class CollectionShow extends React.Component {
   render() {
     const { collection } = this.props;
     const { articles } = this.state;
-    console.log(this.props);
+
+
+
     return (
       <div>
         { collection && this.props.feeds &&
           <div>
-            <h1>{collection.title}</h1>
+            <h1 className="feed-index-title">{collection.title}</h1>
               <ul>
                 {this.sortArticles().map( (article, id) =>
                   <CollectionShowItem

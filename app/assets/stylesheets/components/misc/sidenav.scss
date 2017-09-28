@@ -19,6 +19,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   list-style: none;
+  color: black;
 }
 
 .sidenav .fa {
@@ -128,7 +129,6 @@
 
 .collection-index-item {
   padding-top: 5px;
-  margin-left: 25px;
   font-weight: bold;
   font-size: 13px;
 }
@@ -174,8 +174,16 @@
   vertical-align: baseline;
 }
 
-.collection-item-header .fa-angle-down {
+.collection-item-title .fa-angle-down {
   font-size: 18px;
+}
+
+.collection-item-title:hover {
+  text-decoration: none;
+}
+
+.collection-index-feeds {
+  margin-left: 25px;
 }
 
 button:focus {outline:0;}

@@ -7,17 +7,22 @@ import CollectionFeedItem from './collection_feed_item';
 
 const CollectionIndexItem = ({collection}) => (
   <li className="collection-index-item" key={collection.id}>
-    <div className="collection-item-header">
-      <i className="fa fa-angle-down" aria-hidden="true"></i>
+
+
       <NavLink
         to={{
           pathname: `/i/collections/${collection.title.toLowerCase()}`,
           collection
-        }}>
-        {collection.title}
+        }}
+        >
+
+        <div className="collection-item-title">
+          <i className="fa fa-angle-down" aria-hidden="true"></i>
+          {collection.title}
+        </div>
       </NavLink>
-    </div>
-    <ul>
+
+    <ul className="collection-index-feeds">
       {collection.feeds.map( (feed, id) =>
         <CollectionFeedItem key={id} feed={feed}/>
       )}
