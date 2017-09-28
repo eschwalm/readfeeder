@@ -13,8 +13,8 @@ class FeedShow extends React.Component {
 
   componentWillMount() {
     FeedShow.defaultProps = {
-      articles: {},
-      feed: { name: "Feed" }
+      articles: [{}],
+      feed: { name: "" }
     };
   }
 
@@ -33,7 +33,6 @@ class FeedShow extends React.Component {
     const {articles, feed} = this.props;
     const source = this.props.match.params.source;
 
-    console.log(this.props);
     return (
       <div>
         {

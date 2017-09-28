@@ -29,6 +29,7 @@
 .sidenav a:hover {
   cursor: pointer;
   background-color: #dddddd;
+  text-decoration: none;
 }
 
 .sidenav-toggle-btn {
@@ -119,7 +120,7 @@
   text-decoration: none;
 }
 
-.fa-cog:hover {
+a .collection-settings .fa-cog:hover {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -145,6 +146,8 @@
   text-decoration: none;
   color: black;
   font-weight: normal;
+  display: -webkit-box;
+  margin-left: 25px;
 }
 
 .collection-feed-item a {
@@ -182,8 +185,14 @@
   text-decoration: none;
 }
 
-.collection-index-feeds {
-  margin-left: 25px;
+.collection-feed-icon {
+  width: 16px;
+  object-fit: cover;
 }
+
+.collection-feed-name {
+  margin-left: 10px;
+}
+
 
 button:focus {outline:0;}

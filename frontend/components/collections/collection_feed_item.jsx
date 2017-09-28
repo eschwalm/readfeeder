@@ -6,11 +6,17 @@ const CollectionFeedItem = ({feed}) => (
   <div>
     { feed && feed.name &&
       <div>
-        <li className="collection-feed-item">
-          <NavLink to={`/i/feeds/${feed.id}`}>
-            {feed.name}
-          </NavLink>
-        </li>
+        <NavLink to={`/i/feeds/${feed.id}`}>
+          <li className="collection-feed-item">
+            <img className="collection-feed-icon"
+              src={"https://icons.better-idea.org/icon" +
+                `?url=${feed.url}&size=70..120..200`}
+                />
+            <div className="collection-feed-name">
+              {feed.name}
+            </div>
+          </li>
+        </NavLink>
       </div>
     }
   </div>
