@@ -4,14 +4,10 @@ class Api::CollectionFeedsController < ApplicationController
     @collection_feeds = CollectionFeed.all
   end
 
-  def show
-    @collection_feed = CollectionFeed.find(params[:collection_id])
-  end
-
   def create
-    @collection_feed = CollectionFeed.new(collection_feed_params)
-    if @collection_feed.save
-      @collection = @collection_feed.collection
+    collection_feed = CollectionFeed.new(collection_feed_params)
+    if collection_feed.save
+      @collection = Collection.find_by(id: collection_feed.collection_id)
       render 'api/collections/show'
     else
       render json: @collection_feed.errors.full_messages, status: 422
