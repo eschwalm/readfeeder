@@ -51,10 +51,10 @@ class SidebarNav extends React.Component {
             <i className="fa fa-home" aria-hidden="true"></i>
             Home
           </a>
-          <a>
+          <NavLink to='/i/discover'>
             <i className="fa fa-rss" aria-hidden="true"></i>
             Discover
-          </a>
+          </NavLink>
           <NavLink to="/i/saved">
             <i className="fa fa-bookmark-o" aria-hidden="true"></i>
             Read Later
@@ -77,10 +77,12 @@ class SidebarNav extends React.Component {
                   </NavLink>
           </div>
             <ul>
-              <a className="feed-li-item">
+              <NavLink
+                to="/i/all"
+                className="feed-li-item">
                 <i className="fa fa-bars" aria-hidden="true"></i>
                 All
-              </a>
+              </NavLink>
 
                 <CollectionsIndexContainer />
 

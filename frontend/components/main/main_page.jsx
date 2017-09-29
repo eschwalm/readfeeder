@@ -11,6 +11,8 @@ import CollectionShowContainer from '../collections/collection_show_container';
 import SavedArticlesContainer from '../articles/saved_articles_container';
 import EditCollectionsContainer
   from '../collections/edit_collections_container';
+import DiscoverPageContainer from '../default/discover_page_container';
+import AllCollectionsContainer from '../default/all_collections_container';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -29,7 +31,13 @@ class MainPage extends React.Component {
 
           <div className="main-content">
             <Switch>
-
+              <Route
+                path="/i/all"
+                component={AllCollectionsContainer}
+                />
+              <Route
+                exact path="/i/discover"
+                component={DiscoverPageContainer} />
               <Route path="/i/saved" component={SavedArticlesContainer} />
               <Route
                 exact path="/i/collections"

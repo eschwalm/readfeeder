@@ -4,11 +4,14 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import values from 'lodash/values';
 
 import {
+  followedFeeds,
   feedArticles,
   allFeeds,
   collectionFeeds } from '../../selectors/feed_selectors';
 import { fetchFeed, fetchCollectionFeed } from '../../actions/feeds_actions';
-import { collectionFeed } from '../../selectors/collection_selectors';
+import {
+  collectionFeed,
+  allCollections } from '../../selectors/collection_selectors';
 import {
   fetchCollection,
   fetchCollections } from '../../actions/collection_actions';

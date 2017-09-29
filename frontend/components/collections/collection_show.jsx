@@ -7,6 +7,9 @@ import capitalize from 'lodash/capitalize';
 import values from 'lodash/values';
 import sortBy from 'lodash/sortBy';
 import flatten from 'lodash/flatten';
+import concat from 'lodash/concat';
+import filter from 'lodash/filter';
+
 
 class CollectionShow extends React.Component {
 
@@ -30,19 +33,31 @@ class CollectionShow extends React.Component {
     this.props.fetchCollections();
   }
 
+  // mergeFeeds() {
+  //   let collection = this.props.collection
+  //   let feeds = Object.keys(collection)
+  //     .map( i => collection[i]['feeds']);
+  //   return flatten(feeds);
+  // }
+
+  // requestArticles(nextProps) {
+  //   return (nextProps.location.pathname === "/i/all") ?
+  //     this.mergeFeeds(nextProps.collection).forEach(feed =>
+  //     this.props.fetchCollectionFeed(feed.feed_id)) :
+  //
+  // }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.pathname !== this.props.location.pathname) {
       nextProps.collection.feeds.forEach( feed =>
-        this.props.fetchCollectionFeed(feed.feed_id)
-      );
+        this.props.fetchCollectionFeed(feed.feed_id));
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.collection !== this.props.collection) {
       this.props.collection.feeds.forEach( feed =>
-        this.props.fetchCollectionFeed(feed.feed_id)
-      );
+        this.props.fetchCollectionFeed(feed.feed_id));
     }
   }
 
@@ -69,8 +84,6 @@ class CollectionShow extends React.Component {
   render() {
     const { collection } = this.props;
     const { articles } = this.state;
-
-
 
     return (
       <div>
