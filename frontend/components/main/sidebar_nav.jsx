@@ -47,10 +47,6 @@ class SidebarNav extends React.Component {
           </button>
 
         <div className={this.state.content}>
-          <a>
-            <i className="fa fa-home" aria-hidden="true"></i>
-            Home
-          </a>
           <NavLink to='/i/discover'>
             <i className="fa fa-rss" aria-hidden="true"></i>
             Discover

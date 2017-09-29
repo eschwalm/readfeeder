@@ -4,11 +4,19 @@
   background: transparent;
   float: left;
   font-size: 18px;
+  padding-bottom: 50px;
 }
 
 .home-page img {
-  padding-top: 50px;
+
   margin: 0 auto;
+  width: 100%;
+  border: 1px solid #ccc;
+  z-index: 1;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  height: auto;
+  margin-top: 3rem;
   width: 100%;
 }
 
@@ -62,6 +70,7 @@
   margin: 0 auto;
   width: 25%;
   justify-content: space-around;
+  padding: 5px;
 }
 
 .features-container {

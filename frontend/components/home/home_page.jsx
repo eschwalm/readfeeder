@@ -17,7 +17,7 @@ class HomePage extends React.Component {
           <Welcome />
           <br/> <br/>
           <img
-            src="https://s3.feedly.com/production/head/images/landing/screenshot-web@2x.png"/>
+            src="http://res.cloudinary.com/dhuab49yi/image/upload/v1506717546/readfeeder_img.png"/>
         </div>
       <Features />
       <Footer />

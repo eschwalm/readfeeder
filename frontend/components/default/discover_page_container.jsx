@@ -20,8 +20,8 @@ const mapStateToProps = ({entities}) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchCollections: () => dispatch(fetchCollections()),
   fetchFeeds: () => dispatch(fetchFeeds()),
-  fetchFeed: () => dispatch(fetchFeed()),
-  fetchCollectionFeed: (id) => dispatch(fetchCollectionFeed())
+  fetchFeed: (feed) => dispatch(fetchFeed(feed)),
+  fetchCollectionFeed: (id) => dispatch(fetchCollectionFeed(id))
 });
 
 export default withRouter(

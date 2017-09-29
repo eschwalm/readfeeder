@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Route, Switch } from 'react-router-dom';
+import { Redirect, withRouter, Route, Switch } from 'react-router-dom';
 
 import MainHeaderContainer from './main_header_container';
 import SidebarNav from './sidebar_nav';
@@ -31,6 +31,10 @@ class MainPage extends React.Component {
 
           <div className="main-content">
             <Switch>
+
+              <Route
+                exact path="/i"
+                render={() => (<Redirect to="/i/all" />)} />
               <Route
                 path="/i/all"
                 component={AllCollectionsContainer}

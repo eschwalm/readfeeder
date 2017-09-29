@@ -6,8 +6,10 @@ const DiscoverPageItem = ({categoryToTitle, feeds, collections}) => (
 <li className="discover-page-item">
   { feeds && collections &&
     <div >
-      <h3>{categoryToTitle(feeds[0].category)}</h3>
-      <ul>
+      <h3
+        style={{marginLeft: "10px", marginTop: "15px"}}>
+        {categoryToTitle(feeds[0].category)}</h3>
+      <ul className="feed-index">
         {
           feeds.map( (feed, i) =>
             <FeedIndexItem
