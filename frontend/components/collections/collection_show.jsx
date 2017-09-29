@@ -9,6 +9,7 @@ import sortBy from 'lodash/sortBy';
 import flatten from 'lodash/flatten';
 
 class CollectionShow extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -18,11 +19,16 @@ class CollectionShow extends React.Component {
 
   }
 
-  // componentDidMount() {
-  //   this.props.collection.feeds.forEach( feed =>
-  //     this.props.fetchCollectionFeed(feed.feed_id)
-  //   );
-  // }
+  componentWillMount() {
+
+  }
+
+  componentDidMount() {
+    // this.props.collection.feeds.forEach( feed =>
+    //   this.props.fetchCollectionFeed(feed.feed_id)
+    // );
+    this.props.fetchCollections();
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.pathname !== this.props.location.pathname) {
@@ -85,5 +91,7 @@ class CollectionShow extends React.Component {
     );
   }
 }
+
+
 
 export default CollectionShow;

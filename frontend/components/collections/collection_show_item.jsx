@@ -1,13 +1,20 @@
 import React from 'react';
-
 import { NavLink } from 'react-router-dom';
 
-const CollectionShowItem = ({article}) => (
+import SaveArticleButtonContainer
+  from '../articles/save_article_button_container';
+
+const CollectionShowItem = ({article, saved}) => (
   <li className="feed-show-item">
     <div >
       <img className="feed-index-image" src={article.urlToImage}/>
     </div>
     <span className="feed-index-text">
+      <SaveArticleButtonContainer
+        article={article}
+        source={article.src}
+        saved={saved}
+        />
       <h5>{article.title}</h5>
       <span
         className="collection-show-detail"

@@ -9,7 +9,9 @@ import {
   collectionFeeds } from '../../selectors/feed_selectors';
 import { fetchFeed, fetchCollectionFeed } from '../../actions/feeds_actions';
 import { collectionFeed } from '../../selectors/collection_selectors';
-import { fetchCollection } from '../../actions/collection_actions';
+import {
+  fetchCollection,
+  fetchCollections } from '../../actions/collection_actions';
 
 import CollectionShow from './collection_show';
 
@@ -23,7 +25,8 @@ const mapStateToProps = ({entities}, {match}) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchCollection: (collection) =>
     dispatch(fetchCollection(collection)),
-  fetchCollectionFeed: (source) => dispatch(fetchCollectionFeed(source))
+  fetchCollectionFeed: (source) => dispatch(fetchCollectionFeed(source)),
+  fetchCollections: () => dispatch(fetchCollections())
 });
 
 export default withRouter(
