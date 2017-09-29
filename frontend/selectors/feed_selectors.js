@@ -4,6 +4,7 @@ import filter from 'lodash/filter';
 import collectionFeed from './collection_selectors';
 import flatten from 'lodash/flatten';
 import find from 'lodash/find';
+import merge from 'lodash/merge';
 
 export const allFeeds = state => {
   let feeds = values(state.feeds);
@@ -37,10 +38,27 @@ export const followedFeeds = (state, match) => {
 };
 
 export const collectionFeeds = (state, match) => {
+  if (match.path === "/i/all") {
+    let collections = values(state.collection);
+    let feeds = [];
+    collections.forEach( collection => feeds.push(collection.feeds));
+    let articleFeeds = {};
+
+    flatten(feeds).forEach( feed => {
+      if (state.feeds[feed]) {
+        articleFeeds[feed] = state.feeds[feed];
+      }
+    });
+
+    return articleFeeds;
+  }
+
   let id = Object.keys(state.collections).find( idx =>
     state.collections[idx].title.toLowerCase() === match.params.category
   );
   let collection = state.collections[id];
+
+
   if (collection) {
     let feeds = values(collection.feeds).map( feed => feed.feed_id);
     let currentFeeds = {};

@@ -30,6 +30,11 @@ const SavedArticleItem = ({article, saved}) => (
 
       {article.description}
     </span>
+    <a
+      className="save-article-button"
+      style={{fontSize: "18px", color: "#ccc"}}
+      href={article.url}>
+      <i className="fa fa-external-link" aria-hidden="true"></i></a>
   </li>
 );
 

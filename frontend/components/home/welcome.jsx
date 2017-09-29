@@ -6,8 +6,7 @@ class Welcome extends React.Component {
     return (
       <div className="home-welcome">
         <h1>Welcome to Readfeeder</h1><br/>
-        <p>The content you need to accelerate your
-          research, marketing, and sales</p><br/>
+        <p>Get the latest headlines from all of your sources, in one feed.</p><br/>
 
         <div className="welcome-button">
           <SessionFormContainer formType="signup" />

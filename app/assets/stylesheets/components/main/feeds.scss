@@ -9,7 +9,7 @@
   max-width: 25%;
   float: left;
   box-sizing: content-box;
-  width: fit-content;
+  width: min-content;
 }
 
 .feed-index-menu {
@@ -64,7 +64,7 @@
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
-  max-width: 90%;
+  max-width: 80%;
   min-width: min-content;
 }
 
@@ -82,4 +82,9 @@
 
 .collection-show-detail {
   padding-bottom: 10px;
+}
+
+.article-url {
+  display: block;
+  position: relative;
 }

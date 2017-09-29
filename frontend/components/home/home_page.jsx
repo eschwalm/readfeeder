@@ -2,6 +2,10 @@ import React from 'react';
 
 import NavHeader from './nav_header';
 import Welcome from './welcome';
+import Footer from './footer';
+import Features from './features';
+
+import readfeeder from './readfeeder.png';
 
 class HomePage extends React.Component {
   render() {
@@ -14,8 +18,10 @@ class HomePage extends React.Component {
           <Welcome />
           <br/> <br/>
           <img
-            src="https://s3.feedly.com/production/head/images/landing/screenshot-web@2x.png"/>
+            src={readfeeder}/>
         </div>
+      <Features />
+      <Footer />
       </div>
     );
   }
