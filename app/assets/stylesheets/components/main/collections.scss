@@ -32,3 +32,15 @@
 .edit-feed-btn {
   float: right;
 }
+
+.collapse.show {
+  display: inherit;
+  width: fit-content;
+  margin-left: 10px;
+  vertical-align: super;
+}
+
+.collapsing {
+  transition: 0s;
+  display: none;
+}
