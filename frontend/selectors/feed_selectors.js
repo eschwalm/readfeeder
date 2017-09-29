@@ -38,21 +38,6 @@ export const followedFeeds = (state, match) => {
 };
 
 export const collectionFeeds = (state, match) => {
-  if (match.path === "/i/all") {
-    let collections = values(state.collection);
-    let feeds = [];
-    collections.forEach( collection => feeds.push(collection.feeds));
-    let articleFeeds = {};
-
-    flatten(feeds).forEach( feed => {
-      if (state.feeds[feed]) {
-        articleFeeds[feed] = state.feeds[feed];
-      }
-    });
-
-    return articleFeeds;
-  }
-
   let id = Object.keys(state.collections).find( idx =>
     state.collections[idx].title.toLowerCase() === match.params.category
   );
@@ -66,6 +51,29 @@ export const collectionFeeds = (state, match) => {
     feeds.forEach( feed => {
       if (state.feeds[feed]) {
         currentFeeds[feed] = state.feeds[feed];
+      }
+    });
+
+    return currentFeeds;
+  }
+  return state.feeds;
+};
+
+export const allCollectionFeeds = (state) => {
+  let collections = values(state.collections);
+  let feeds = [];
+
+  collections.forEach( collection => feeds.push(collection.feeds));
+
+  feeds = flatten(feeds);
+  console.log('feeds', feeds);
+
+  if (feeds) {
+    let currentFeeds = {};
+
+    feeds.forEach( feed => {
+      if (state.feeds[feed.feed_id]) {
+        currentFeeds[feed.feed_id] = state.feeds[feed.feed_id];
       }
     });
 

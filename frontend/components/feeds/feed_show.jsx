@@ -11,6 +11,10 @@ class FeedShow extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.props.fetchFeed(this.props.match.params.source);
+  }
+
   componentDidMount() {
     this.props.fetchFeed(this.props.match.params.source);
   }

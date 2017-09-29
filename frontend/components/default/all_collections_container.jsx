@@ -35,7 +35,7 @@ import {
   followedFeeds,
   feedArticles,
   allFeeds,
-  collectionFeeds } from '../../selectors/feed_selectors';
+  allCollectionFeeds } from '../../selectors/feed_selectors';
 import { fetchFeed, fetchCollectionFeed } from '../../actions/feeds_actions';
 import {
   collectionFeed,
@@ -48,7 +48,7 @@ import AllCollections from './all_collections';
 
 const mapStateToProps = ({entities}, {match}) => ({
     collection: allCollections(entities),
-    feeds: collectionFeeds(entities, match),
+    feeds: allCollectionFeeds(entities),
     articles: feedArticles(entities)
 });
 
