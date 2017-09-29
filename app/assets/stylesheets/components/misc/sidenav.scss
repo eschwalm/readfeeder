@@ -113,6 +113,11 @@
   background-color: none;
 }
 
+.sidenav a .collection-settings:hover {
+  background: none;
+  color: inherit;
+}
+
 .collection-settings .fa-cog:focus {
   outline: none;
   -webkit-box-shadow: none;
@@ -120,7 +125,7 @@
   text-decoration: none;
 }
 
-a .collection-settings .fa-cog:hover {
+.collection-settings a .fa-cog:hover {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;

@@ -67,8 +67,13 @@ class SidebarNav extends React.Component {
 
                   <NavLink
                     to="/i/collections"
-                    className="collection-settings">
-                  <i className="fa fa-cog" aria-hidden="true"></i>
+                    className="collection-settings"
+                    style={{
+                      color: "inherit",
+                      background: "none"}}>
+                  <i
+                    className="fa fa-cog"
+                    aria-hidden="true"></i>
                   </NavLink>
           </div>
             <ul>
