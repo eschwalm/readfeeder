@@ -20,6 +20,14 @@ export const createCollection = (collection) => (
   })
 );
 
+export const updateCollection = collection => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/collections/${collection.id}`,
+    data: { collection }
+  })
+);
+
 export const addFeedToCollection = ({ collectionId, feedId }) => (
   $.ajax({
     method: "POST",

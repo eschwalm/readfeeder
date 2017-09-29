@@ -9,6 +9,8 @@ import CollectionIndexContainer
   from '../collections/collections_index_container';
 import CollectionShowContainer from '../collections/collection_show_container';
 import SavedArticlesContainer from '../articles/saved_articles_container';
+import EditCollectionsContainer
+  from '../collections/edit_collections_container';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -31,7 +33,7 @@ class MainPage extends React.Component {
               <Route path="/i/saved" component={SavedArticlesContainer} />
               <Route
                 exact path="/i/collections"
-                component={CollectionIndexContainer} />
+                component={EditCollectionsContainer} />
               <Route
                 exact path="/i/collections/:category"
                 component={CollectionShowContainer} />

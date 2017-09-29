@@ -28,6 +28,11 @@ export const fetchCollection = collection => dispatch => (
     .then( feeds => dispatch(receiveCollection(feeds)))
 );
 
+export const updateCollection = collection => dispatch => (
+  APIUtil.updateCollection(collection)
+    .then( updated => dispatch(receiveCollection(updated)))
+);
+
 export const addFeedToCollection = collectionFeed => dispatch => (
   APIUtil.addFeedToCollection(collectionFeed)
     .then( collection => dispatch(receiveCollection(collection)))
