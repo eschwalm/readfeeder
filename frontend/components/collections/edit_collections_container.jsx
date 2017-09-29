@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import {
   updateCollection,
+  deleteCollection,
   deleteFeedFromCollection } from '../../actions/collection_actions';
 import { allCollections } from '../../selectors/collection_selectors';
 import { followedFeeds } from '../../selectors/feed_selectors';
@@ -15,6 +16,7 @@ const mapStateToProps = ({entities}) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateCollection: collection => dispatch(updateCollection(collection)),
+  deleteCollection: id => dispatch(deleteCollection(id)),
   deleteFeedFromCollection: collectionFeed =>
     dispatch(deleteFeedFromCollection(collectionFeed))
 });

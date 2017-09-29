@@ -2,6 +2,7 @@ import * as APIUtil from '../util/collections_api_util';
 
 export const RECEIVE_ALL_COLLECTIONS = "RECEIVE_ALL_COLLECTIONS";
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
+export const REMOVE_COLLECTION = "REMOVE_COLLECTION";
 
 export const receiveCollections = collections => ({
   type: RECEIVE_ALL_COLLECTIONS,
@@ -10,6 +11,11 @@ export const receiveCollections = collections => ({
 
 export const receiveCollection = collection => ({
   type: RECEIVE_COLLECTION,
+  collection
+});
+
+export const removeCollection = collection => ({
+  type: REMOVE_COLLECTION,
   collection
 });
 
@@ -31,6 +37,11 @@ export const fetchCollection = collection => dispatch => (
 export const updateCollection = collection => dispatch => (
   APIUtil.updateCollection(collection)
     .then( updated => dispatch(receiveCollection(updated)))
+);
+
+export const deleteCollection = id => dispatch => (
+  APIUtil.deleteCollection(id)
+    .then( collection => dispatch(removeCollection(collection)))
 );
 
 export const addFeedToCollection = collectionFeed => dispatch => (

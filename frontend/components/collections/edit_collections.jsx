@@ -41,6 +41,8 @@ class EditCollections extends React.Component {
                 collection={collection}
                 feeds={this.feedsByCollection(collection)}
                 deleteFeedFromCollection={this.props.deleteFeedFromCollection}
+                updateCollection={this.props.updateCollection}
+                deleteCollection={this.props.deleteCollection}
                 />)
               }
             </ul>

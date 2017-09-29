@@ -28,6 +28,13 @@ export const updateCollection = collection => (
   })
 );
 
+export const deleteCollection = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/collections/${id}`
+  })
+);
+
 export const addFeedToCollection = ({ collectionId, feedId }) => (
   $.ajax({
     method: "POST",
