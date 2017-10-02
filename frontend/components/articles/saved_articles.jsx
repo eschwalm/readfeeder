@@ -13,7 +13,7 @@ class SavedArticles extends React.Component {
 
   render() {
     const { saved } = this.props;
-    console.log(this.props);
+
     return (
       <div>
         <h1 className="feed-index-title">Saved Articles</h1>

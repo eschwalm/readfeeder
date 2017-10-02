@@ -66,7 +66,6 @@ export const allCollectionFeeds = (state) => {
   collections.forEach( collection => feeds.push(collection.feeds));
 
   feeds = flatten(feeds);
-  console.log('feeds', feeds);
 
   if (feeds) {
     let currentFeeds = {};
