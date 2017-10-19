@@ -22,7 +22,7 @@ const CollectionShowItem = ({article, saved}) => (
         className="collection-show-detail"
         style={{display: "inline-flex"}}>
         <NavLink
-          
+
           to={`/i/feeds/${article.src}`}>
           {article.src}
         </NavLink>
@@ -37,8 +37,9 @@ const CollectionShowItem = ({article, saved}) => (
 
     </span>
     <a
+      target="_blank"
       className="save-article-button"
-      style={{fontSize: "18px", color: "#ccc"}}
+      style={{fontSize: "18px", color: "#ccc", textDecoration: "none"}}
       href={article.url}>
       <i className="fa fa-external-link" aria-hidden="true"></i></a>
   </li>
