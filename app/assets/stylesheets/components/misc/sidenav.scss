@@ -6,7 +6,6 @@
   left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.05);
-  overflow-x: hidden;
   padding-top: 40px;
   transition: 0.3s;
   opacity: 1;
@@ -59,6 +58,10 @@
   width: auto;
 }
 
+.static-content {
+  max-height: inherit;
+}
+
 .sidenav-content .fa {
   color: #aaa;
   vertical-align: baseline;
@@ -88,14 +91,15 @@
 .sidenav .add-content-btn {
   background: #28a745;
   z-index: 1;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: -webkit-fill-available;
+  width: inherit;
   height: 51px;
   padding-top: 18px;
   color: #fff;
   font-size: 12px;
   padding-left: 65px;
+  width: 250px;
 }
 
 .sidenav .add-content-btn:hover {
@@ -164,9 +168,15 @@
   text-decoration: none;
 }
 
-// .collection-index {
-//   overflow: scroll;
-// }
+.collection-index {
+  overflow: auto;
+  top: 200px;
+  bottom: 50px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+}
 
 .container {
   align-items: baseline;

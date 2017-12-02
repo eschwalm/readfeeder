@@ -42,54 +42,59 @@ class SidebarNav extends React.Component {
   render() {
     return (
       <div id="sidenav" className="sidenav">
+
           <button className="sidenav-toggle-btn" onClick={this.toggleNav}>
             <i className={this.toggleBtn()} aria-hidden="true"></i>
-          </button>
+            </button>
 
-        <div className={this.state.content}>
-          <NavLink to='/i/discover'>
-            <i className="fa fa-rss" aria-hidden="true"></i>
-            Discover
-          </NavLink>
-          <NavLink to="/i/saved">
-            <i className="fa fa-bookmark-o" aria-hidden="true"></i>
-            Read Later
-          </NavLink>
-          <div className="separator"></div>
-
-
-          <div className="container">
-            <label>FEEDS</label>
-
-                  <NavLink
-                    to="/i/collections"
-                    className="collection-settings"
-                    style={{
-                      color: "inherit",
-                      background: "none"}}>
-                  <i
-                    className="fa fa-cog"
-                    aria-hidden="true"></i>
+            <div className={this.state.content}>
+              <div className="static-content">
+              <NavLink to='/i/discover'>
+                <i className="fa fa-rss" aria-hidden="true"></i>
+                  Discover
+                </NavLink>
+                <NavLink to="/i/saved">
+                  <i className="fa fa-bookmark-o" aria-hidden="true"></i>
+                    Read Later
                   </NavLink>
-          </div>
-            <ul>
-              <NavLink
-                to="/i/all"
-                className="feed-li-item">
-                <i className="fa fa-bars" aria-hidden="true"></i>
-                All
-              </NavLink>
-
-                <CollectionsIndexContainer />
-
-            </ul>
+                  <div className="separator"></div>
 
 
-            <NavLink to="/i/discover/sources" className="add-content-btn">
-              <i className="fa fa-plus" aria-hidden="true"></i>
-              ADD CONTENT
-            </NavLink>
-        </div>
+                    <div className="container">
+                      <label>FEEDS</label>
+
+                        <NavLink
+                          to="/i/collections"
+                          className="collection-settings"
+                          style={{
+                            color: "inherit",
+                            background: "none"}}>
+                            <i
+                              className="fa fa-cog"
+                              aria-hidden="true"></i>
+                            </NavLink>
+                          </div>
+                          <NavLink
+                            to="/i/all"
+                            className="feed-li-item">
+                            <i className="fa fa-bars" aria-hidden="true"></i>
+                              All
+                            </NavLink>
+                          </div>
+
+                          <div className="collections">
+
+                              <CollectionsIndexContainer />
+
+                                <NavLink to="/i/discover/sources" className="add-content-btn">
+                                  <i className="fa fa-plus" aria-hidden="true"></i>
+                                    ADD CONTENT
+                                  </NavLink>
+
+                          </div>
+
+                        </div>
+
       </div>
     );
   }
