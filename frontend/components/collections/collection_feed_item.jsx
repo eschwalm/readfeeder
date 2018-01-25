@@ -9,7 +9,7 @@ const CollectionFeedItem = ({feed}) => (
         <NavLink to={`/i/feeds/${feed.id}`}>
           <li className="collection-feed-item">
             <img className="collection-feed-icon"
-              src={"http://grabicon.com/icon?domain=" +
+              src={"https://grabicon.com/icon?domain=" +
                 `${feed.url}`}
                 />
             <div className="collection-feed-name">

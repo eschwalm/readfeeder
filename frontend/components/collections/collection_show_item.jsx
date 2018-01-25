@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import addFilter from '../../util/feeds_api_util.jsx';
 
 import SaveArticleButtonContainer
   from '../articles/save_article_button_container';

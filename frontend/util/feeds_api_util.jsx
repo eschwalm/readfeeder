@@ -25,3 +25,7 @@ export const addFeed = ({name, url}) => (
       }}
   })
 );
+
+export const addFilter = (url) => (
+  url = url.replace(/^http:\/\//i, 'https://')
+);

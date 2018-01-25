@@ -8,7 +8,7 @@ const FeedIndexItem = ({feedId, Feed, Collections}) => (
 
         <div className="feed-index-menu">
           <img className="feed-index-icon"
-            src={"http://grabicon.com/icon?domain=" +
+            src={"https://grabicon.com/icon?domain=" +
               `${Feed.url}&size=64`}
               />
             <FollowDropdownContainer
