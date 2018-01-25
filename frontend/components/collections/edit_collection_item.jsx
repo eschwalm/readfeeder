@@ -103,8 +103,8 @@ class EditCollectionItem extends React.Component {
         feeds.map( (feed, i) =>
         <li key={i} className="edit-feed-item">
           <img className="edit-feed-icon"
-            src={"http://grabicon.com/icon?domain=" +
-              `${feed.url}`}
+            src={"https://api.statvoo.com/favicon/" +
+              `?url=${feed.url}`}
               />
 
             {feed.name}
