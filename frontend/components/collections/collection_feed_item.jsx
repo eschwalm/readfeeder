@@ -9,8 +9,8 @@ const CollectionFeedItem = ({feed}) => (
         <NavLink to={`/i/feeds/${feed.id}`}>
           <li className="collection-feed-item">
             <img className="collection-feed-icon"
-              src={"https://icons.better-idea.org/icon" +
-                `?url=${feed.url}&size=70..120..200`}
+              src={"http://grabicon.com/icon?domain=" +
+                `${feed.url}`}
                 />
             <div className="collection-feed-name">
               {feed.name}
