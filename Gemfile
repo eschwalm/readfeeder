@@ -53,6 +53,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
+  gem 'rspec_junit_formatter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
